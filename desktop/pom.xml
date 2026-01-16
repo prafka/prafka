@@ -12,7 +12,6 @@
 
     <artifactId>desktop</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
 
     <properties>
         <project.build.name>Prafka</project.build.name>
