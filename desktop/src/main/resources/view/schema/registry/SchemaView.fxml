@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="paneRoot" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prafka.desktop.controller.schema.registry.SchemaController">
+    <VBox styleClass="content-block" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <BorderPane styleClass="content-block-header">
+            <left>
+                <HBox alignment="CENTER_LEFT">
+                    <Label fx:id="labelH1Comeback" styleClass="h1, h1-comeback" text="%common.schemaRegistry"/>
+                    <Label styleClass="h1, h1-separator" text="  /  "/>
+                    <Label fx:id="labelH1" styleClass="h1" />
+                </HBox>
+            </left>
+            <right>
+                <HBox alignment="CENTER_RIGHT" spacing="10">
+                    <Button fx:id="buttonEditCompatibility" focusTraversable="false" styleClass="secondary" text="%schema.editCompatibility" />
+                    <Button fx:id="buttonDelete" focusTraversable="false" styleClass="secondary" text="%schema.deleteSchema" />
+                </HBox>
+            </right>
+        </BorderPane>
+        <HBox styleClass="pd-t-0_5"/>
+        <FlowPane styleClass="summary-block" alignment="CENTER_LEFT" hgap="15" vgap="10">
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardCurrentVersionTitle" styleClass="title" text="%common.currentVersion" />
+                <VBox fx:id="paneCardCurrentVersionContent" styleClass="content" />
+            </HBox>
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardTotalVersionCountTitle" styleClass="title" text="%common.totalVersions" />
+                <VBox fx:id="paneCardTotalVersionCountContent" styleClass="content" />
+            </HBox>
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardTypeTitle" styleClass="title" text="%common.type" />
+                <VBox fx:id="paneCardTypeContent" styleClass="content" />
+            </HBox>
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardCompatibilityTitle" styleClass="title" text="%common.compatibility" />
+                <VBox fx:id="paneCardCompatibilityContent" styleClass="content" />
+            </HBox>
+        </FlowPane>
+        <HBox styleClass="pd-t-1"/>
+        <TabPane VBox.vgrow="ALWAYS" fx:id="tabPane" tabClosingPolicy="UNAVAILABLE">
+            <Tab fx:id="tabSource" text="%schemaView.tabSource" />
+            <Tab fx:id="tabStructure" text="%schemaView.tabStructure" />
+        </TabPane>
+    </VBox>
+</AnchorPane>

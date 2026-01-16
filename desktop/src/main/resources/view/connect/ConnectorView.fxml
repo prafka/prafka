@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="paneRoot" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prafka.desktop.controller.connect.ConnectorController">
+    <VBox styleClass="content-block" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <BorderPane styleClass="content-block-header">
+            <left>
+                <HBox alignment="CENTER_LEFT">
+                    <Label fx:id="labelH1Comeback" styleClass="h1, h1-comeback" text="%common.kafkaConnect"/>
+                    <Label styleClass="h1, h1-separator" text="  /  "/>
+                    <Label fx:id="labelH1" styleClass="h1" />
+                </HBox>
+            </left>
+            <right>
+                <HBox alignment="CENTER_RIGHT" spacing="10">
+                    <StackPane alignment="CENTER_RIGHT">
+                        <Button fx:id="buttonPause" focusTraversable="false" styleClass="secondary" text="%connect.pause" visible="false" />
+                        <Button fx:id="buttonResume" focusTraversable="false" styleClass="secondary" text="%connect.resume" visible="false" />
+                    </StackPane>
+                    <Button fx:id="buttonRestart" focusTraversable="false" styleClass="secondary" text="%connect.restart" />
+                    <Button fx:id="buttonDelete" focusTraversable="false" styleClass="secondary" text="%common.delete" />
+                    <MenuButton fx:id="buttonMore" focusTraversable="false" styleClass="secondary, button-icon-only, menu-button-without-arrow" contentDisplay="GRAPHIC_ONLY" maxHeight="Infinity" />
+                </HBox>
+            </right>
+        </BorderPane>
+        <HBox styleClass="pd-t-0_5"/>
+        <FlowPane styleClass="summary-block" alignment="CENTER_LEFT" hgap="15" vgap="10">
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardWorkerTitle" styleClass="title" text="%common.worker" />
+                <VBox fx:id="paneCardWorkerContent" styleClass="content" />
+            </HBox>
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardPluginTitle" styleClass="title" text="%common.plugin" />
+                <VBox fx:id="paneCardPluginContent" styleClass="content" />
+            </HBox>
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardTypeTitle" styleClass="title" text="%common.type" />
+                <VBox fx:id="paneCardTypeContent" styleClass="content" />
+            </HBox>
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardStateTitle" styleClass="title" text="%common.state" />
+                <VBox fx:id="paneCardStateContent" styleClass="content" />
+            </HBox>
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardRunTaskCountTitle" styleClass="title" text="%connect.runningTasks" />
+                <VBox fx:id="paneCardRunTaskCountContent" styleClass="content" />
+            </HBox>
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardFailTaskCountTitle" styleClass="title" text="%connect.failedTasks" />
+                <VBox fx:id="paneCardFailTaskCountContent" styleClass="content" />
+            </HBox>
+        </FlowPane>
+        <HBox styleClass="pd-t-1"/>
+        <TabPane VBox.vgrow="ALWAYS" fx:id="tabPane" tabClosingPolicy="UNAVAILABLE">
+            <Tab fx:id="tabTasks" text="%common.tasks" />
+            <Tab fx:id="tabConfiguration" text="%common.configuration" />
+        </TabPane>
+    </VBox>
+</AnchorPane>

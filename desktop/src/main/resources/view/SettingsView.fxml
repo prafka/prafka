@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane fx:id="paneRoot" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prafka.desktop.controller.SettingsController">
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <center>
+            <GridPane fx:id="paneContent" alignment="CENTER">
+                <TabPane tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.vgrow="ALWAYS">
+                    <Tab text="%common.interface">
+                        <VBox>
+                            <HBox styleClass="pd-t-1" />
+                            <Label text="%common.language" styleClass="font-medium">
+                                <VBox.margin>
+                                    <Insets bottom="5"/>
+                                </VBox.margin>
+                            </Label>
+                            <ComboBox fx:id="comboBoxLanguage" focusTraversable="false" />
+                            <Label text="%common.theme" styleClass="font-medium">
+                                <VBox.margin>
+                                    <Insets top="20" bottom="5"/>
+                                </VBox.margin>
+                            </Label>
+                            <ComboBox fx:id="comboBoxTheme" focusTraversable="false" />
+                            <Label text="%common.timestampFormat" styleClass="font-medium">
+                                <VBox.margin>
+                                    <Insets top="20" bottom="5"/>
+                                </VBox.margin>
+                            </Label>
+                            <ComboBox fx:id="comboBoxTimestampFormat" focusTraversable="false" />
+                        </VBox>
+                    </Tab>
+                    <Tab text="%common.proxy">
+                        <VBox>
+                            <HBox styleClass="pd-t-1" />
+                            <HBox spacing="20">
+                                <RadioButton fx:id="radioButtonNoProxy" mnemonicParsing="false" selected="true" text="%settingsView.noProxy">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="toggleGroupProxy" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="radioButtonManualProxy" mnemonicParsing="false" text="%settingsView.manualProxy" toggleGroup="$toggleGroupProxy" />
+                            </HBox>
+                            <VBox fx:id="paneManualProxy" disable="true">
+                                <GridPane>
+                                    <VBox GridPane.rowIndex="0" GridPane.columnIndex="0">
+                                        <Label text="%common.host" styleClass="font-medium">
+                                            <VBox.margin>
+                                                <Insets top="20" bottom="5"/>
+                                            </VBox.margin>
+                                        </Label>
+                                        <TextField fx:id="textFieldProxyHost" />
+                                        <GridPane.margin>
+                                            <Insets right="10"/>
+                                        </GridPane.margin>
+                                    </VBox>
+                                    <VBox GridPane.rowIndex="0" GridPane.columnIndex="1">
+                                        <Label text="%common.port" styleClass="font-medium">
+                                            <VBox.margin>
+                                                <Insets top="20" bottom="5"/>
+                                            </VBox.margin>
+                                        </Label>
+                                        <TextField fx:id="textFieldProxyPort" />
+                                        <GridPane.margin>
+                                            <Insets left="10"/>
+                                        </GridPane.margin>
+                                    </VBox>
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="ALWAYS" percentWidth="70" />
+                                        <ColumnConstraints hgrow="ALWAYS" percentWidth="30" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints vgrow="ALWAYS" />
+                                    </rowConstraints>
+                                </GridPane>
+                                <GridPane>
+                                    <VBox GridPane.rowIndex="0" GridPane.columnIndex="0">
+                                        <Label text="%common.login" styleClass="font-medium">
+                                            <VBox.margin>
+                                                <Insets top="20" bottom="5"/>
+                                            </VBox.margin>
+                                        </Label>
+                                        <TextField fx:id="textFieldProxyLogin" />
+                                        <GridPane.margin>
+                                            <Insets right="10"/>
+                                        </GridPane.margin>
+                                    </VBox>
+                                    <VBox GridPane.rowIndex="0" GridPane.columnIndex="1">
+                                        <Label text="%common.password" styleClass="font-medium">
+                                            <VBox.margin>
+                                                <Insets top="20" bottom="5"/>
+                                            </VBox.margin>
+                                        </Label>
+                                        <TextField fx:id="textFieldProxyPassword" />
+                                        <GridPane.margin>
+                                            <Insets left="10"/>
+                                        </GridPane.margin>
+                                    </VBox>
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints vgrow="ALWAYS" />
+                                    </rowConstraints>
+                                </GridPane>
+                            </VBox>
+                        </VBox>
+                    </Tab>
+                    <Tab text="%common.logs">
+                        <VBox>
+                            <HBox styleClass="pd-t-1" />
+                            <Label text="%common.directory" styleClass="font-medium">
+                                <VBox.margin>
+                                    <Insets bottom="5" />
+                                </VBox.margin>
+                            </Label>
+                            <TextField fx:id="textFieldLogDir" editable="false" />
+                            <CheckBox fx:id="checkBoxLogDebug" text="Debug">
+                                <VBox.margin>
+                                    <Insets top="20" />
+                                </VBox.margin>
+                            </CheckBox>
+                        </VBox>
+                    </Tab>
+                </TabPane>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="80" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints vgrow="ALWAYS" />
+                </rowConstraints>
+                <BorderPane.margin>
+                    <Insets bottom="20.0" top="20.0" />
+                </BorderPane.margin>
+            </GridPane>
+        </center>
+        <bottom>
+            <HBox alignment="CENTER_RIGHT" styleClass="button-block" spacing="10">
+                <HBox fx:id="paneAlert" alignment="CENTER_RIGHT" />
+                <Button fx:id="buttonCancel" mnemonicParsing="false" styleClass="secondary" text="%common.cancel" />
+                <Button fx:id="buttonSave" mnemonicParsing="false" styleClass="primary" text="%common.save" />
+            </HBox>
+        </bottom>
+    </BorderPane>
+</AnchorPane>

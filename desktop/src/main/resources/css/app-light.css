@@ -1,0 +1,304 @@
+.scroll-pane.root-background > .viewport {
+    -fx-background-color: #F7F7F9;
+}
+
+.scroll-pane.content-background > .viewport {
+    -fx-background-color: #FFFFFF;
+}
+
+.toggle-button-tab {
+    -fx-background-color: transparent;
+    -fx-border-color: #F7F7F9;
+    -fx-text-fill: #4C4E64;
+}
+
+.toggle-button-tab:hover {
+    -fx-background-color: transparent;
+    -fx-text-fill: #181C32;
+}
+
+.toggle-button-tab:selected,
+.toggle-button-tab:selected:hover {
+    -fx-background-color: transparent;
+    -fx-border-color: #4C40E7;
+    -fx-text-fill: #4C40E7;
+}
+
+.button-link {
+    -fx-text-fill: #A2A1A7;
+}
+
+.button-link:hover {
+    -fx-text-fill: #4C4E64;
+}
+
+.sidebar-block {
+
+}
+
+.sidebar-block-top-cluster .combo-box-base {
+    -fx-background-color: #FFFFFF;
+}
+
+.sidebar-block .button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #4C4E64;
+}
+
+.sidebar-block .button.current {
+    -fx-background-color: #EEEEF1;
+    -fx-border-color: #EEEEF1;
+    -fx-text-fill: #4C40E7;
+}
+
+.sidebar-block .button.current:hover {
+    -fx-text-fill: #4238CC;
+}
+
+.sidebar-block .button:hover {
+    -fx-background-color: #EEEEF1;
+    -fx-border-color: #EEEEF1;
+    -fx-text-fill: #181C32;
+}
+
+.content-block {
+
+}
+
+.content-block-header .h1-comeback,
+.content-block-header .h1-separator {
+    -fx-text-fill: #4C4E64;
+}
+
+.content-block-header .h1-comeback:hover {
+    -fx-text-fill: #181C32;
+}
+
+.content-block-main {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E9E9E9;
+}
+
+.label-desc {
+    -fx-text-fill: #A2A1A7;
+}
+
+.shape-default {
+    -fx-fill: #EEEEF1;
+}
+
+.shape-success {
+    -fx-fill: #30A66D;
+}
+
+.shape-warn {
+    -fx-fill: #EE9D2B;
+}
+
+.shape-error {
+    -fx-fill: #E54D2E;
+}
+
+.primary {
+    -fx-background-color: #4C40E7;
+    -fx-border-color: #4C40E7;
+    -fx-text-fill: #FFFFFF;
+}
+
+.primary:hover {
+    -fx-background-color: #4238CC;
+    -fx-border-color: #4238CC;
+}
+
+.secondary {
+    -fx-background-color: #EEEEF1;
+    -fx-border-color: #EEEEF1;
+    -fx-text-fill: #4C4E64;
+}
+
+.secondary:hover {
+    -fx-background-color: #EAEAED;
+    -fx-border-color: #EAEAED;
+    -fx-text-fill: #181C32;
+}
+
+.secondary:default {
+    -fx-background-color: #EEEEF1;
+    -fx-border-color: #EEEEF1;
+    -fx-text-fill: #4C40E7;
+}
+
+.secondary:default:hover {
+    -fx-background-color: #EAEAED;
+    -fx-border-color: #EAEAED;
+    -fx-text-fill: #4238CC;
+}
+
+.secondary-outline {
+    -fx-background-color: transparent;
+    -fx-border-color: #E2E2E2;
+}
+
+.secondary-outline:hover {
+    -fx-border-color: #C8C8C8;
+}
+
+.summary-card .title {
+    -fx-text-fill: #908E96;
+}
+
+.summary-card .content,
+.summary-card .content .label {
+    -fx-text-fill: #4C40E7;
+}
+
+.summary-card-consume .label {
+    -fx-text-fill: #4C4E64;
+}
+
+.summary-card-consume .title {
+    -fx-text-fill: #908E96;
+}
+
+.summary-card-consume .button {
+    -fx-text-fill: #4C40E7;
+}
+
+.summary-card-consume .button:hover {
+    -fx-text-fill: #4238CC;
+}
+
+.card,
+.card-radio-button {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E9E9E9;
+}
+
+.card .title,
+.card .title-regular {
+    -fx-text-fill: #4C4E64;
+}
+
+.card .content,
+.card .content .label {
+    -fx-text-fill: #4C40E7;
+}
+
+.info-block {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E9E9E9;
+}
+
+.info-block .content {
+    -fx-text-fill: #706E77;
+}
+
+.button-block {
+    -fx-border-color: #EEEDEF;
+}
+
+.font-purple {
+    -fx-text-fill: #cb398f;
+}
+
+.font-gray {
+    -fx-text-fill: #4C4E64;
+}
+
+.font-green {
+    -fx-text-fill: #30A66D;
+}
+
+.font-red {
+    -fx-text-fill: #E54D2E;
+}
+
+.badge-gray {
+    -fx-background-color: #F4F2F4;
+    -fx-text-fill: #6F6E77;
+}
+
+.badge-violet {
+    -fx-background-color: #F5F2FF;
+    -fx-text-fill: #5746AF;
+}
+
+.badge-blue {
+    -fx-background-color: #EDF6FF;
+    -fx-text-fill: #006ADC;
+}
+
+.badge-green {
+    -fx-background-color: #E9F9EE;
+    -fx-text-fill: #18794E;
+}
+
+.badge-yellow {
+    -fx-background-color: #FFF4D5;
+    -fx-text-fill: #AD5700;
+}
+
+.badge-red {
+    -fx-background-color: #ffeded;
+    -fx-text-fill: #ad3921;
+}
+
+.snackbar {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E9E9E9;
+    -fx-text-fill: #4C4E64;
+}
+
+.code-area .text {
+    -fx-fill: #181C32;
+}
+
+.code-area .lineno {
+    -fx-background-color: #F5F5F7;
+    -fx-text-fill: #A2A1A7;
+}
+
+.code-area .lineno .text {
+    -fx-fill: #A2A1A7;
+}
+
+.code-area .main-selection {
+    -fx-fill: #EDF6FF;
+}
+
+.code-area-border {
+    -fx-border-color: #E2E2E2;
+}
+
+.code-area .default {
+    -fx-fill: #181C32;
+}
+
+.code-area-kv .key {
+    -fx-fill: #543bb6;
+}
+
+.code-area-kv .value {
+    -fx-fill: #cb398f;
+}
+
+.code-area-avro .field-name {
+    -fx-fill: #543bb6;
+}
+
+.code-area-avro .value-string,
+.code-area-avro .value-number,
+.code-area-avro .value-bool {
+    -fx-fill: #cb398f;
+}
+
+.code-area-json .field-name {
+    -fx-fill: #543bb6;
+}
+
+.code-area-json .value-string,
+.code-area-json .value-number,
+.code-area-json .value-bool {
+    -fx-fill: #cb398f;
+}

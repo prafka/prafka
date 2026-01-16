@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane fx:id="paneRoot" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prafka.desktop.controller.HelpController">
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <center>
+            <GridPane alignment="CENTER">
+                <VBox GridPane.rowIndex="0" GridPane.columnIndex="0" alignment="CENTER">
+                    <ImageView><Image url="/img/icon64.png" /></ImageView>
+                    <Label text="Prafka" styleClass="font-medium">
+                        <VBox.margin>
+                            <Insets top="10" />
+                        </VBox.margin>
+                    </Label>
+                    <Label fx:id="labelCurrentVersion">
+                        <VBox.margin>
+                            <Insets top="20" />
+                        </VBox.margin>
+                    </Label>
+                    <VBox fx:id="paneNewVersion" alignment="CENTER" />
+                    <Hyperlink fx:id="linkSite">
+                        <VBox.margin>
+                            <Insets top="20" />
+                        </VBox.margin>
+                    </Hyperlink>
+                    <HBox alignment="CENTER">
+                        <Hyperlink fx:id="linkDocumentation" text="%common.documentation" />
+                        <Label text=" / " />
+                        <Hyperlink fx:id="linkChangelog" text="%common.changelog" />
+                        <VBox.margin>
+                            <Insets top="20" />
+                        </VBox.margin>
+                    </HBox>
+                    <HBox alignment="CENTER">
+                        <Hyperlink fx:id="linkEmail" />
+                        <VBox.margin>
+                            <Insets top="40" />
+                        </VBox.margin>
+                    </HBox>
+                </VBox>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="80" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints vgrow="ALWAYS" />
+                </rowConstraints>
+                <BorderPane.margin>
+                    <Insets bottom="20.0" top="20.0" />
+                </BorderPane.margin>
+            </GridPane>
+        </center>
+        <bottom>
+            <HBox alignment="CENTER_RIGHT" styleClass="button-block">
+                <Button fx:id="buttonCancel" mnemonicParsing="false" styleClass="secondary" text="%common.cancel" />
+            </HBox>
+        </bottom>
+    </BorderPane>
+</AnchorPane>

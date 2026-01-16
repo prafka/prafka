@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="paneRoot" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prafka.desktop.controller.topic.JsFilterDocumentationController">
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <center>
+            <ScrollPane styleClass="root-background" fitToWidth="true" fitToHeight="true">
+                <GridPane alignment="CENTER">
+                    <VBox GridPane.rowIndex="0" GridPane.columnIndex="0" alignment="CENTER_LEFT">
+                        <Label text="%jsFilterDocumentationView.basic1" wrapText="true">
+                            <VBox.margin>
+                                <Insets bottom="10" />
+                            </VBox.margin>
+                        </Label>
+                        <Label text="%jsFilterDocumentationView.basic2" wrapText="true">
+                            <VBox.margin>
+                                <Insets bottom="10" />
+                            </VBox.margin>
+                        </Label>
+                        <Label text="%jsFilterDocumentationView.basic3" wrapText="true">
+                            <VBox.margin>
+                                <Insets bottom="20" />
+                            </VBox.margin>
+                        </Label>
+                        <Label text="%common.parameters" styleClass="font-medium">
+                            <VBox.margin>
+                                <Insets bottom="5" />
+                            </VBox.margin>
+                        </Label>
+                        <VBox spacing="2.5">
+                            <HBox>
+                                <Label text="•  " />
+                                <Label text="key (String | Object)" styleClass="font-code" />
+                            </HBox>
+                            <HBox>
+                                <Label text="•  " />
+                                <Label text="value (String | Object)" styleClass="font-code" />
+                            </HBox>
+                            <HBox>
+                                <Label text="•  " />
+                                <Label text="headers (Object)" styleClass="font-code" />
+                            </HBox>
+                            <HBox>
+                                <Label text="•  " />
+                                <Label text="offset (Number)" styleClass="font-code" />
+                            </HBox>
+                            <HBox>
+                                <Label text="•  " />
+                                <Label text="partition (Number)" styleClass="font-code" />
+                            </HBox>
+                            <HBox>
+                                <Label text="•  " />
+                                <Label text="timestamp (Number)" styleClass="font-code" />
+                            </HBox>
+                            <VBox.margin>
+                                <Insets bottom="20" />
+                            </VBox.margin>
+                        </VBox>
+                        <Label text="%common.examples" styleClass="font-medium">
+                            <VBox.margin>
+                                <Insets bottom="5" />
+                            </VBox.margin>
+                        </Label>
+                        <VBox spacing="2.5">
+                            <HBox>
+                                <Label text="•  " />
+                                <Label text="return key != null" styleClass="font-code, font-purple" />
+                            </HBox>
+                            <HBox>
+                                <Label text="•  " />
+                                <Label text="return value.someProperty == 'some property value'" styleClass="font-code, font-purple" />
+                            </HBox>
+                            <HBox>
+                                <Label text="•  " />
+                                <Label text="return headers['some.header.name'] == 'SomeHeaderValue'" styleClass="font-code, font-purple" />
+                            </HBox>
+                            <HBox>
+                                <Label text="•  " />
+                                <Label text="return offset >= 250 &amp;&amp; partition == 0" styleClass="font-code, font-purple" />
+                            </HBox>
+                        </VBox>
+                        <GridPane.margin>
+                            <Insets bottom="20.0" top="20.0" />
+                        </GridPane.margin>
+                    </VBox>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="80" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints vgrow="ALWAYS" />
+                    </rowConstraints>
+                </GridPane>
+            </ScrollPane>
+        </center>
+        <bottom>
+            <HBox alignment="CENTER_RIGHT" styleClass="button-block">
+                <Button fx:id="buttonOk" mnemonicParsing="false" styleClass="secondary" text="%common.ok" />
+            </HBox>
+        </bottom>
+    </BorderPane>
+</AnchorPane>

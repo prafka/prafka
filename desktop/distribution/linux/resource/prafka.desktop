@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Prafka
+Comment=Prafka - manage, explore and analyze Apache Kafka
+Exec=/opt/prafka/bin/Prafka
+Icon=/opt/prafka/lib/Prafka.png
+Terminal=false
+Type=Application
+Categories=Development
+StartupWMClass=Prafka
+MimeType=

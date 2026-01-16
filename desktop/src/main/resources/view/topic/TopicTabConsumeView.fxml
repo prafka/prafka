@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="paneRoot" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prafka.desktop.controller.topic.TopicTabConsumeController">
+    <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <HBox styleClass="pd-t-1"/>
+        <FlowPane styleClass="summary-block" alignment="CENTER_LEFT" hgap="15" vgap="10">
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardRecordCountTitle" styleClass="title" text="%common.records" />
+                <VBox fx:id="paneCardRecordCountContent" styleClass="content" />
+            </HBox>
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardSizeTitle" styleClass="title" text="%common.size" />
+                <VBox fx:id="paneCardSizeContent" styleClass="content" />
+            </HBox>
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardPartitionCountTitle" styleClass="title" text="%common.partitions" />
+                <VBox fx:id="paneCardPartitionCountContent" styleClass="content" />
+            </HBox>
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardReplicationFactorTitle" styleClass="title" text="%common.replicationFactor" />
+                <VBox fx:id="paneCardReplicationFactorContent" styleClass="content" />
+            </HBox>
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardCleanupPolicyTitle" styleClass="title" text="%common.cleanupPolicy" />
+                <VBox fx:id="paneCardCleanupPolicyContent" styleClass="content" />
+            </HBox>
+            <HBox fx:id="boxCardConsume" alignment="CENTER_LEFT" styleClass="summary-card-consume">
+                <Label styleClass="title" text="Poll" />
+                <VBox fx:id="paneLoaderCardConsume">
+                    <HBox.margin>
+                        <Insets right="6.0" left="6.0" />
+                    </HBox.margin>
+                </VBox>
+                <Label fx:id="labelCurrentCountCardConsume" text="0" />
+                <Label text="/" />
+                <Label fx:id="labelMaxCountCardConsume" />
+                <Button fx:id="buttonCancelConsume" text="%common.stop">
+                    <HBox.margin>
+                        <Insets left="6.0" />
+                    </HBox.margin>
+                </Button>
+            </HBox>
+        </FlowPane>
+        <HBox styleClass="pd-t-1"/>
+        <VBox styleClass="content-block-main" VBox.vgrow="ALWAYS">
+            <VBox fx:id="paneFilterBlock" styleClass="filter-block">
+                <FlowPane alignment="CENTER_LEFT" hgap="20" vgap="10">
+                    <TextField fx:id="textFieldQuickSearch" focusTraversable="false" prefWidth="250.0" promptText="%common.quickSearch" />
+                    <HBox alignment="CENTER_LEFT">
+                        <Label text="%common.show">
+                            <HBox.margin>
+                               <Insets right="10.0" />
+                            </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="comboBoxFromFilter" />
+                        <HBox fx:id="paneFromFilter" alignment="CENTER_LEFT" />
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT">
+                        <Label text="%topicTabConsumeView.labelMaxResults">
+                            <HBox.margin>
+                               <Insets right="10.0" />
+                            </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="comboBoxMaxResults" />
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT">
+                        <Label text="%common.partitions">
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="comboBoxPartitions"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT">
+                        <Label text="%topicTabConsumeView.keyFormat">
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="comboBoxKeyFormat" />
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT">
+                        <Label text="%topicTabConsumeView.valueFormat">
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="comboBoxValueFormat" />
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="20">
+                        <Button fx:id="buttonJsFilter" styleClass="secondary" text="%topicTabConsumeView.jsFilter" />
+                        <VBox alignment="CENTER_LEFT">
+                            <Button fx:id="buttonReload" styleClass="secondary, button-icon-only" contentDisplay="GRAPHIC_ONLY" VBox.vgrow="ALWAYS" maxHeight="Infinity" />
+                        </VBox>
+                        <Button fx:id="buttonTemplates" styleClass="secondary" text="%common.templates" />
+                        <Button fx:id="buttonExport" styleClass="secondary" text="%common.export" />
+                    </HBox>
+                </FlowPane>
+                <FlowPane fx:id="paneJsFilters" alignment="CENTER_LEFT" hgap="10" />
+            </VBox>
+            <StackPane VBox.vgrow="ALWAYS">
+                <TableView fx:id="tableView" focusTraversable="false">
+                    <placeholder><Label fx:id="labelEmptyTableView" /></placeholder>
+                </TableView>
+                <ProgressIndicator fx:id="progressIndicator" maxWidth="32" maxHeight="32" />
+            </StackPane>
+        </VBox>
+    </VBox>
+</AnchorPane>

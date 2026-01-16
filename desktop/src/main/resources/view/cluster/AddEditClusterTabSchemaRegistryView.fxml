@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane fx:id="paneRoot" HBox.Hgrow="ALWAYS" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prafka.desktop.controller.cluster.AddEditClusterTabSchemaRegistryController">
+    <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Label text="URL" styleClass="font-medium">
+            <VBox.margin>
+                <Insets bottom="5.0" />
+            </VBox.margin>
+        </Label>
+        <TextField fx:id="textFieldUrl" promptText="http://localhost:8081" />
+        <Label text="%createClusterView.labelAuthenticationMethod" styleClass="font-medium">
+            <VBox.margin>
+                <Insets top="20.0" bottom="7.5" />
+            </VBox.margin>
+        </Label>
+        <HBox spacing="10">
+            <RadioButton fx:id="radioButtonNoneAuthentication" mnemonicParsing="false" selected="true" text="%createClusterView.noneAuthentication" prefWidth="140" styleClass="card-radio-button, card-radio-button-sm">
+                <toggleGroup>
+                    <ToggleGroup fx:id="toggleGroupAuthenticationMethod" />
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="radioButtonBasicAuthentication" mnemonicParsing="false" text="Basic auth" toggleGroup="$toggleGroupAuthenticationMethod" prefWidth="140" styleClass="card-radio-button, card-radio-button-sm" />
+            <RadioButton fx:id="radioButtonTokenAuthentication" mnemonicParsing="false" text="Bearer token" toggleGroup="$toggleGroupAuthenticationMethod" prefWidth="140" styleClass="card-radio-button, card-radio-button-sm" />
+            <RadioButton fx:id="radioButtonSslAuthentication" mnemonicParsing="false" text="SSL" toggleGroup="$toggleGroupAuthenticationMethod" prefWidth="140" styleClass="card-radio-button, card-radio-button-sm" />
+        </HBox>
+        <VBox fx:id="paneAuthentication" />
+        <TitledPane animated="false" expanded="false" text="%common.additionalProperties" styleClass="titled-pane-font-medium">
+            <VBox>
+                <TextArea fx:id="textAreaAdditionalProperties" promptText="schema.registry.ssl.endpoint.identification.algorithm=https" minHeight="140" prefHeight="140" />
+            </VBox>
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+        </TitledPane>
+        <Button fx:id="buttonTestConnection" mnemonicParsing="false" styleClass="secondary" text="%createClusterView.buttonTestConnection">
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+        </Button>
+    </VBox>
+</AnchorPane>

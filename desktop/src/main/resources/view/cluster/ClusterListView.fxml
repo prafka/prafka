@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="paneRoot" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prafka.desktop.controller.cluster.ClusterListController">
+    <VBox styleClass="content-block" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <BorderPane styleClass="content-block-header">
+            <left>
+                <HBox alignment="CENTER_LEFT">
+                    <Label styleClass="h1" text="%common.clusters" />
+                </HBox>
+            </left>
+            <right>
+                <HBox alignment="CENTER_RIGHT" spacing="10">
+                    <Button fx:id="buttonImport" focusTraversable="false" mnemonicParsing="false" styleClass="secondary" text="%common.import" />
+                    <Button fx:id="buttonExport" focusTraversable="false" mnemonicParsing="false" styleClass="secondary" text="%common.export" />
+                    <Button fx:id="buttonAddCluster" focusTraversable="false" mnemonicParsing="false" styleClass="primary" text="%cluster.addCluster" />
+                </HBox>
+            </right>
+        </BorderPane>
+        <HBox styleClass="pd-t-1"/>
+        <VBox styleClass="content-block-main" VBox.vgrow="ALWAYS">
+            <HBox fx:id="paneFilterBlock" alignment="CENTER_LEFT" styleClass="filter-block">
+                <TextField fx:id="textFieldSearch" focusTraversable="false" prefWidth="300.0" promptText="%common.search" />
+            </HBox>
+            <StackPane VBox.vgrow="ALWAYS">
+                <TableView fx:id="tableView" focusTraversable="false">
+                    <placeholder><Label fx:id="labelEmptyTableView" /></placeholder>
+                </TableView>
+                <ProgressIndicator fx:id="progressIndicator" maxWidth="32" maxHeight="32" />
+            </StackPane>
+        </VBox>
+    </VBox>
+</AnchorPane>

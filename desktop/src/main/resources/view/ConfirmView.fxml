@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="paneRoot" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prafka.desktop.controller.ConfirmController">
+   <BorderPane styleClass="confirm-dialog" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <center>
+          <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+              <VBox alignment="CENTER_LEFT" prefWidth="400.0">
+                  <Label fx:id="labelTitle" styleClass="title" />
+                  <Label fx:id="labelContent" styleClass="content" wrapText="true" />
+              </VBox>
+          </HBox>
+      </center>
+      <bottom>
+         <HBox alignment="CENTER_RIGHT" styleClass="button-block" spacing="10">
+             <StackPane alignment="CENTER_RIGHT">
+                 <HBox fx:id="paneAlert" alignment="CENTER_RIGHT" />
+                 <ProgressIndicator fx:id="progressIndicator" maxHeight="20" maxWidth="20" visible="false" />
+             </StackPane>
+             <Button fx:id="buttonCancel" styleClass="secondary" mnemonicParsing="false" text="%common.cancel" />
+             <Button fx:id="buttonConfirm" styleClass="primary" mnemonicParsing="false" text="%common.confirm" />
+         </HBox>
+      </bottom>
+   </BorderPane>
+</AnchorPane>

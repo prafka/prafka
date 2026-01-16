@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.SegmentedButton?>
+
+<AnchorPane fx:id="paneRoot" HBox.Hgrow="ALWAYS" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prafka.desktop.controller.acl.CreateAclForCustomNeedController">
+    <VBox fx:id="paneContent" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Label text="%common.principal" styleClass="font-medium">
+            <VBox.margin>
+                <Insets bottom="5.0" />
+            </VBox.margin>
+        </Label>
+        <TextField fx:id="textFieldPrincipal" />
+        <Label styleClass="label-desc" text="%createAclView.principalDescription">
+            <VBox.margin>
+                <Insets top="3.0" />
+            </VBox.margin>
+        </Label>
+
+        <Label text="%common.host" styleClass="font-medium">
+            <VBox.margin>
+                <Insets top="20.0" bottom="5.0" />
+            </VBox.margin>
+        </Label>
+        <TextField fx:id="textFieldHost" />
+        <Label styleClass="label-desc" text="%createAclView.hostDescription">
+            <VBox.margin>
+                <Insets top="3.0" />
+            </VBox.margin>
+        </Label>
+
+        <Label text="%common.resource" styleClass="font-medium">
+            <VBox.margin>
+                <Insets top="20.0" bottom="5.0" />
+            </VBox.margin>
+        </Label>
+        <ComboBox fx:id="comboBoxResourceType"/>
+
+        <Label text="%common.operation" styleClass="font-medium">
+            <VBox.margin>
+                <Insets top="20.0" bottom="5.0" />
+            </VBox.margin>
+        </Label>
+        <SegmentedButton fx:id="segmentedButtonOperation">
+            <buttons>
+                <ToggleButton fx:id="toggleButtonOperationAllow" text="%common.allow" selected="true" />
+                <ToggleButton fx:id="toggleButtonOperationDeny" text="%common.deny" />
+            </buttons>
+            <VBox.margin>
+                <Insets bottom="7.0" />
+            </VBox.margin>
+        </SegmentedButton>
+        <ComboBox fx:id="comboBoxOperation" />
+
+        <VBox fx:id="boxPattern">
+            <Label text="%common.pattern" styleClass="font-medium">
+                <VBox.margin>
+                    <Insets top="20.0" bottom="5.0" />
+                </VBox.margin>
+            </Label>
+            <SegmentedButton fx:id="segmentedButtonPattern">
+                <buttons>
+                    <ToggleButton fx:id="toggleButtonPatternExact" text="%createAclView.exact" selected="true" />
+                    <ToggleButton fx:id="toggleButtonPatternPrefixed" text="%createAclView.prefixed" />
+                </buttons>
+                <VBox.margin>
+                    <Insets bottom="7.0" />
+                </VBox.margin>
+            </SegmentedButton>
+            <StackPane alignment="CENTER_LEFT">
+                <TextField fx:id="textFieldPatternExact" />
+                <TextField fx:id="textFieldPatternPrefixed" />
+            </StackPane>
+            <Label styleClass="label-desc" text="%createAclView.patternDescription">
+                <VBox.margin>
+                    <Insets top="3.0" />
+                </VBox.margin>
+            </Label>
+        </VBox>
+    </VBox>
+</AnchorPane>

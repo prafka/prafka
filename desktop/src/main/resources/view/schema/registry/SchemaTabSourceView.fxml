@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.*?>
+<?import org.fxmisc.flowless.VirtualizedScrollPane?>
+<?import org.fxmisc.richtext.CodeArea?>
+
+<AnchorPane fx:id="paneRoot" styleClass="pd-t-1" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prafka.desktop.controller.schema.registry.SchemaTabSourceController">
+    <VBox styleClass="content-block-main" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <BorderPane fx:id="paneFilterBlock" styleClass="filter-block">
+            <left>
+                <ComboBox fx:id="comboBoxVersion" prefWidth="300.0" focusTraversable="false" promptText="%common.selectVersion" />
+            </left>
+            <right>
+                <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                    <Button fx:id="buttonEdit" focusTraversable="false" styleClass="secondary-outline" text="%schema.updateSchema" />
+                    <Button fx:id="buttonDelete" focusTraversable="false" styleClass="secondary-outline" text="%schema.deleteVersion" />
+                </HBox>
+            </right>
+        </BorderPane>
+        <StackPane VBox.vgrow="ALWAYS">
+            <VirtualizedScrollPane>
+                <content>
+                    <CodeArea fx:id="codeArea" editable="false" wrapText="true" style="-fx-background-radius: 0 0.4em" />
+                </content>
+            </VirtualizedScrollPane>
+            <ProgressIndicator fx:id="progressIndicator" maxWidth="32" maxHeight="32" />
+        </StackPane>
+    </VBox>
+</AnchorPane>

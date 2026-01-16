@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane fx:id="paneRoot" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prafka.desktop.controller.DashboardController">
+   <BorderPane fx:id="borderPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <left>
+          <BorderPane styleClass="sidebar-block">
+              <top>
+                  <VBox styleClass="sidebar-block-top">
+                      <BorderPane styleClass="sidebar-block-top-cluster">
+                          <left>
+                              <HBox alignment="CENTER_LEFT">
+                                  <ComboBox fx:id="comboBoxSelectCluster" focusTraversable="false" promptText="%dashboardView.selectCluster"/>
+                              </HBox>
+                          </left>
+                          <right>
+                              <HBox alignment="CENTER_RIGHT">
+                                  <Circle fx:id="circleConnectionStatus" radius="6.0" styleClass="shape-default"/>
+                              </HBox>
+                          </right>
+                      </BorderPane>
+                      <VBox spacing="10">
+                          <Button fx:id="buttonOverview" focusTraversable="false" graphicTextGap="6.0" text="%common.overview" />
+                          <Button fx:id="buttonTopics" focusTraversable="false" graphicTextGap="6.0" text="%common.topics" />
+                          <Button fx:id="buttonConsumerGroups" focusTraversable="false" graphicTextGap="6.0" text="%common.consumerGroups" />
+                          <Button fx:id="buttonSchemaRegistry" focusTraversable="false" graphicTextGap="6.0" text="%common.schemaRegistry" />
+                          <Button fx:id="buttonKafkaConnect" focusTraversable="false" graphicTextGap="6.0" text="%common.kafkaConnect" />
+                          <Button fx:id="buttonBrokers" focusTraversable="false" graphicTextGap="6.0" text="%common.brokers" />
+                          <Button fx:id="buttonAcl" focusTraversable="false" graphicTextGap="6.0" text="%common.acl" />
+                          <Button fx:id="buttonQuotas" focusTraversable="false" graphicTextGap="6.0" text="%common.quotas" />
+                      </VBox>
+                  </VBox>
+              </top>
+              <bottom>
+                  <VBox styleClass="sidebar-block-bottom" spacing="10">
+                      <Button fx:id="buttonClusters" focusTraversable="false" text="%common.clusters" />
+<!--                      <Button fx:id="buttonCertificates" focusTraversable="false" text="%common.certificates" />-->
+                      <Button fx:id="buttonSettings" focusTraversable="false" text="%common.settings" />
+                      <Button fx:id="buttonHelp" focusTraversable="false" text="%common.help" />
+                  </VBox>
+              </bottom>
+          </BorderPane>
+      </left>
+   </BorderPane>
+</AnchorPane>

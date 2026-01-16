@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="paneRoot" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prafka.desktop.controller.consumer.group.ConsumerGroupController">
+    <VBox styleClass="content-block" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <BorderPane styleClass="content-block-header">
+            <left>
+                <HBox alignment="CENTER_LEFT">
+                    <Label fx:id="labelH1Comeback" styleClass="h1, h1-comeback" text="%common.consumerGroups"/>
+                    <Label styleClass="h1, h1-separator" text="  /  "/>
+                    <Label fx:id="labelH1" styleClass="h1" />
+                </HBox>
+            </left>
+            <right>
+                <HBox alignment="CENTER_RIGHT" spacing="10">
+                    <Label fx:id="labelNotEditable" visible="false" />
+                    <Button fx:id="buttonReset" focusTraversable="false" styleClass="secondary" text="%consumerGroup.resetOffsets"/>
+                    <Button fx:id="buttonDelete" focusTraversable="false" styleClass="secondary" text="%consumerGroup.deleteGroup"/>
+                </HBox>
+            </right>
+        </BorderPane>
+        <HBox styleClass="pd-t-0_5"/>
+        <FlowPane styleClass="summary-block" alignment="CENTER_LEFT" hgap="15" vgap="10">
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardStateTitle" styleClass="title" text="%common.state" />
+                <VBox fx:id="paneCardStateContent" styleClass="content" />
+            </HBox>
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardMemberCountTitle" styleClass="title" text="%common.members" />
+                <VBox fx:id="paneCardMemberCountContent" styleClass="content" />
+            </HBox>
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardCoordinatorTitle" styleClass="title" text="%common.coordinator" />
+                <VBox fx:id="paneCardCoordinatorContent" styleClass="content" />
+            </HBox>
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardTopicCountTitle" styleClass="title" text="%common.topics" />
+                <VBox fx:id="paneCardTopicCountContent" styleClass="content" />
+            </HBox>
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardPartitionCountTitle" styleClass="title" text="%common.partitions" />
+                <VBox fx:id="paneCardPartitionCountContent" styleClass="content" />
+            </HBox>
+            <HBox styleClass="summary-card">
+                <Label fx:id="labelCardOverallLagTitle" styleClass="title" text="%common.overallLag" />
+                <VBox fx:id="paneCardOverallLagContent" styleClass="content" />
+            </HBox>
+        </FlowPane>
+        <HBox styleClass="pd-t-1"/>
+        <TabPane VBox.vgrow="ALWAYS" fx:id="tabPane" tabClosingPolicy="UNAVAILABLE">
+            <Tab fx:id="tabMembers" text="%common.members" />
+            <Tab fx:id="tabTopics" text="%common.topics" />
+            <Tab fx:id="tabAcl" text="%common.acl" />
+        </TabPane>
+    </VBox>
+</AnchorPane>

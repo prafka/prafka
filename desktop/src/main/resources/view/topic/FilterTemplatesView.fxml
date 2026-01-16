@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="paneRoot" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prafka.desktop.controller.topic.FilterTemplatesController">
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <center>
+            <ScrollPane styleClass="root-background" fitToWidth="true" fitToHeight="true">
+                <GridPane alignment="CENTER">
+                    <VBox fx:id="paneContent" GridPane.rowIndex="0" GridPane.columnIndex="0" alignment="CENTER_LEFT" spacing="10">
+                        <GridPane.margin>
+                            <Insets bottom="20.0" top="20.0" />
+                        </GridPane.margin>
+                    </VBox>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="80" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints vgrow="ALWAYS" />
+                    </rowConstraints>
+                </GridPane>
+            </ScrollPane>
+        </center>
+        <bottom>
+            <HBox alignment="CENTER_RIGHT" styleClass="button-block" spacing="10">
+                <Button fx:id="buttonImport" mnemonicParsing="false" styleClass="secondary" text="%common.import" />
+                <Button fx:id="buttonExport" mnemonicParsing="false" styleClass="secondary" text="%common.export" />
+                <Button fx:id="buttonOk" mnemonicParsing="false" styleClass="secondary" text="%common.ok" />
+            </HBox>
+        </bottom>
+    </BorderPane>
+</AnchorPane>

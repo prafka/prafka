@@ -1,0 +1,73 @@
+name: release
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+
+  release-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
+        with:
+          distribution: 'liberica'
+          java-version: '25.0.1'
+          java-package: 'jdk+fx'
+          cache: maven
+      - run: mvn -pl core,desktop clean package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-macos
+          path: desktop/target/distribution
+
+  release-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
+        with:
+          distribution: 'liberica'
+          java-version: '25.0.1'
+          java-package: 'jdk+fx'
+          cache: maven
+      - run: sudo apt install desktop-file-utils
+      - run: mvn -pl core,desktop clean package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-ubuntu
+          path: desktop/target/distribution
+
+  release-fedora:
+    runs-on: ubuntu-latest
+    container: fedora:latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
+        with:
+          distribution: 'liberica'
+          java-version: '25.0.1'
+          java-package: 'jdk+fx'
+          cache: maven
+      - run: sudo dnf install -y maven rpm-build
+      - run: mvn -pl core,desktop clean package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-fedora
+          path: desktop/target/distribution
+
+  release-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
+        with:
+          distribution: 'liberica'
+          java-version: '25.0.1'
+          java-package: 'jdk+fx'
+          cache: maven
+      - run: mvn -pl core,desktop clean package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-windows
+          path: desktop/target/distribution

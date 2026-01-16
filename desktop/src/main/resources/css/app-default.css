@@ -1,0 +1,240 @@
+.pd-rl-0_4 {
+    -fx-padding: 0 0.4em;
+}
+
+.pd-r-0_4 {
+    -fx-padding: 0 0.4em 0 0;
+}
+
+.pd-1 {
+    -fx-padding: 1em;
+}
+
+.pd-t-1 {
+    -fx-padding: 1em 0 0 0;
+}
+
+.pd-t-0_5 {
+    -fx-padding: 0.5em 0 0 0;
+}
+
+.pd-t-2 {
+    -fx-padding: 2em 0 0 0;
+}
+
+.button-icon-only {
+    -fx-padding: 0 0.6em;
+}
+
+.menu-button-icon-only {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.menu-button-js-filter {
+    -fx-padding: 0.3em 0.5em;
+}
+
+.menu-button-js-filter-inactive > .label .text {
+    -fx-strikethrough: true;
+}
+
+.menu-button.menu-button-without-arrow > .label,
+.menu-button.menu-button-without-arrow > .arrow-button {
+    -fx-padding: 0;
+}
+
+.menu-button.menu-button-without-arrow > .arrow-button > .arrow {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-shape: null;
+}
+
+.toggle-button-tab {
+    -fx-font-family: 'Roboto Medium';
+    -fx-padding: 0 0 0.6em 0;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-insets: 0 1.2em 0 0;
+}
+
+.toggle-button-tab.left-pill,
+.toggle-button-tab.center-pill,
+.toggle-button-tab.right-pill {
+    -fx-padding: 0 0 0.6em 0;
+    -fx-background-insets: 0;
+    -fx-border-radius: 0;
+}
+
+.button-line-left {
+    -fx-background-radius: 0.4em 0 0 0.4em;
+    -fx-border-radius: 0.4em 0 0 0.4em;
+}
+
+.button-line-center {
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+
+.button-line-right {
+    -fx-background-radius: 0 0.4em 0.4em 0;
+    -fx-border-radius: 0 0.4em 0.4em 0;
+}
+
+.button-link {
+    -fx-font-size: 0.9em;
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+ }
+
+.sidebar-block {
+    -fx-min-width: 250;
+    -fx-padding: 1em;
+}
+
+.sidebar-block-top-cluster {
+    -fx-padding: 0 0 1em 0;
+}
+
+.sidebar-block-top-cluster .combo-box-base {
+    -fx-min-width: 200;
+    -fx-max-width: 200;
+}
+
+.sidebar-block .button {
+    -fx-max-width: 250;
+    -fx-alignment: center-left;
+    -fx-font-family: 'Roboto Medium';
+}
+
+.content-block {
+    -fx-padding: 1em;
+}
+
+.content-block-header {
+
+}
+
+.content-block-header .h1 {
+    -fx-font-family: 'Roboto Medium';
+    -fx-font-size: 1.3em;
+}
+
+.content-block-main {
+    -fx-background-radius: 0.4em;
+    -fx-border-radius: 0.4em;
+}
+
+.label-desc {
+    -fx-font-size: 0.9em;
+}
+
+.summary-card,
+.summary-card-consume {
+    -fx-font-family: 'Roboto Medium';
+}
+
+.summary-card .title {
+    -fx-padding: 0 0.3em 0 0;
+}
+
+.summary-card-consume .button {
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+}
+
+.card {
+    -fx-min-width: 150;
+    -fx-background-radius: 0.4em;
+    -fx-border-radius: 0.4em;
+    -fx-font-family: 'Roboto Medium';
+    -fx-padding: 0.8em 1.2em;
+}
+
+.card .title {
+    -fx-font-size: 0.9em;
+    -fx-padding: 0 0 0.3em 0;
+}
+
+.card .title-regular {
+    -fx-padding: 0 0 0.3em 0;
+}
+
+.card-radio-button {
+    -fx-background-radius: 0.4em;
+    -fx-border-radius: 0.4em;
+    -fx-font-family: 'Roboto Medium';
+    -fx-padding: 1.2em;
+}
+
+.card-radio-button-sm {
+    -fx-font-family: 'Roboto';
+    -fx-padding: 0.6em 0.8em;
+}
+
+.info-block {
+    -fx-background-radius: 0.4em;
+    -fx-border-radius: 0.4em;
+    -fx-padding: 0.8em 1em;
+}
+
+.info-block .title {
+    -fx-font-family: 'Roboto Medium';
+    -fx-font-size: 1.2em;
+    -fx-padding: 0 0 0.4em 0;
+}
+
+.filter-block {
+    -fx-padding: 1em;
+}
+
+.confirm-dialog .title {
+    -fx-font-family: 'Roboto Medium';
+    -fx-font-size: 1.4em;
+    -fx-padding: 0 0 1.4em 0;
+}
+
+.button-block {
+    -fx-padding: 0.7em;
+    -fx-border-width: 1 0 0 0;
+}
+
+.font-medium {
+    -fx-font-family: 'Roboto Medium';
+}
+
+.font-code {
+    -fx-font-family: 'JetBrains Mono';
+    -fx-font-size: 0.9em;
+}
+
+.font-code-medium {
+    -fx-font-family: 'JetBrains Mono Medium';
+    -fx-font-size: 0.9em;
+}
+
+.cell-font-enum {
+    -fx-font-size: 0.9em;
+}
+
+.badge {
+    -fx-padding: 0.2em 0.4em;
+    -fx-background-radius: 0.2em;
+    -fx-font-size: 0.8em;
+    -fx-font-family: 'Roboto Medium';
+}
+
+.snackbar {
+    -fx-background-radius: 0.4em;
+    -fx-border-radius: 0.4em;
+    -fx-padding: 0.6em 0.8em;
+    -fx-font-family: 'Roboto Medium';
+}
+
+.code-area .text {
+    -fx-font-family: 'JetBrains Mono';
+    -fx-font-size: 0.95em;
+}

@@ -1,0 +1,316 @@
+@font-face {
+    src: url('../font/Roboto-Regular.ttf');
+}
+
+@font-face {
+    src: url('../font/Roboto-Medium.ttf');
+}
+
+@font-face {
+    src: url('../font/JetBrainsMono-Regular.ttf');
+}
+
+@font-face {
+    src: url('../font/JetBrainsMono-Medium.ttf');
+}
+
+.root {
+    -fx-font-family: 'Roboto';
+    -fx-font-size: 1.05em;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane:focused {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.button:disabled,
+.label:disabled,
+.combo-box:disabled,
+.text-field:disabled,
+.table-view:disabled,
+.tree-table-view:disabled {
+    -fx-opacity: 0.7;
+}
+
+.text-field {
+    -fx-padding: 0.6em 0.8em;
+    -fx-background-radius: 0.4em;
+    -fx-border-radius: 0.4em;
+}
+
+.text-area {
+    -fx-background-radius: 0.4em;
+    -fx-border-radius: 0.4em;
+}
+
+.text-area > .scroll-pane > .viewport {
+    -fx-background-radius: 0.4em;
+    -fx-border-radius: 0.4em;
+}
+
+.text-area .content {
+    -fx-background-color: transparent;
+    -fx-padding: 0.6em 0.8em;
+    -fx-background-radius: 0.4em;
+    -fx-border-radius: 0.4em;
+}
+
+.text-area:focused .content {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0.4em;
+    -fx-border-radius: 0.4em;
+}
+
+.combo-box-base {
+    -fx-background-radius: 0.4em;
+    -fx-border-radius: 0.4em;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+}
+
+.combo-box > .list-cell {
+    -fx-padding: 0.6em 0.8em;
+}
+
+.combo-box-popup > .list-view {
+    -fx-background-insets: 0;
+}
+
+.combo-box-popup  > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected,
+.combo-box-popup  > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected:hover {
+    -fx-background-insets: 0;
+}
+
+.context-menu {
+    -fx-background-insets: 0;
+    -fx-padding: 0.1em;
+}
+
+.date-picker > .text-field {
+    -fx-background-insets: 0;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+}
+
+.date-picker:focused {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0.4em;
+}
+
+.date-picker:focused > .text-field,
+.date-picker > .text-field:focused {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0.4em;
+}
+
+.date-picker > .arrow-button {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0 0.4em 0.4em 0;
+}
+
+.date-picker:focused > .arrow-button {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0 0.4em 0.4em 0;
+}
+
+.button,
+.toggle-button,
+.menu-button {
+    -fx-padding: 0.6em 0.8em;
+    -fx-background-radius: 0.4em;
+    -fx-border-radius: 0.4em;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+}
+
+.toggle-button.left-pill,
+.toggle-button.center-pill,
+.toggle-button.right-pill {
+    -fx-padding: 0.6em 0.8em;
+    -fx-background-insets: 0;
+}
+
+.toggle-button.left-pill {
+    -fx-background-radius: 0.4em 0 0 0.4em;
+    -fx-border-radius: 0.4em 0 0 0.4em;
+}
+
+.toggle-button.center-pill {
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+
+.toggle-button.right-pill {
+    -fx-background-radius: 0 0.4em 0.4em 0;
+    -fx-border-radius: 0 0.4em 0.4em 0;
+}
+
+.toggle-button:selected {
+    -fx-background-insets: 0;
+}
+
+.titled-pane {
+    -fx-border-radius: 0.4em;
+}
+
+.titled-pane > .title {
+    -fx-padding: 0.5em 0.8em;
+}
+
+.titled-pane.titled-pane-font-medium > .title {
+    -fx-font-family: 'Roboto Medium';
+}
+
+.titled-pane > .content > AnchorPane,
+.titled-pane > .content > BorderPane,
+.titled-pane > .content > FlowPane,
+.titled-pane > .content > GridPane,
+.titled-pane > .content > HBox,
+.titled-pane > .content > Pane,
+.titled-pane > .content > StackPane,
+.titled-pane > .content > TilePane,
+.titled-pane > .content > VBox {
+    -fx-padding: 0.5em 0.8em 0.8em 0.8em;
+}
+
+.radio-button > .radio {
+    -fx-background-insets: 0, 2, 5;
+}
+
+.radio-button:selected > .radio > .dot {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.check-box > .box {
+    -fx-background-insets: 0, 2;
+}
+
+.check-box > .box > .mark {
+    -fx-shape: "M 0 0 L 10 10 L 28 -8 L 25 -11 L 10 4 L 3 -3 Z";
+}
+
+.check-box.cell-check-box {
+    -fx-font-size: 0.9em;
+    -fx-border-color: transparent;
+}
+
+.hyperlink {
+    -fx-padding: 0;
+    -fx-border-width: 0;
+}
+
+.hyperlink:focused {
+    -fx-border-width: 0;
+}
+
+.table-view,
+.tree-table-view {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.table-view:focused,
+.tree-table-view:focused {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background,
+.tree-table-view > .column-header-background {
+    -fx-border-width: 0;
+    -fx-padding: 0.4em 0;
+}
+
+.table-view.table-view-header-radius .column-header-background {
+    -fx-background-radius: 0.4em 0.4em 0 0;
+}
+
+.table-view .column-header,
+.tree-table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 1em;
+}
+
+.table-view .column-header-background .filler,
+.tree-table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label,
+.tree-table-view .column-header .label {
+    -fx-alignment: center-left;
+    -fx-font-family: 'Roboto Medium';
+    -fx-font-size: 0.9em;
+}
+
+.table-cell,
+.tree-table-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 1em;
+    -fx-border-width: 0;
+}
+
+.table-row-cell,
+.tree-table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-width: 1 0 0 0;
+}
+
+.table-row-cell:empty,
+.tree-table-row-cell:empty {
+    -fx-border-width: 0;
+}
+
+.table-row-cell:odd,
+.tree-table-row-cell:odd {
+    -fx-background-color: transparent;
+}
+
+.table-row-cell:even,
+.tree-table-row-cell:even {
+    -fx-background-color: transparent;
+}
+
+.tab-pane {
+    -fx-tab-min-height: 0;
+}
+
+.tab-pane > .tab-header-area {
+    -fx-padding: 0;
+}
+
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-border-width: 0;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 0 0.6em 0;
+    -fx-border-insets: 0 1.2em 0 0;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-width: 0;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
+    -fx-font-family: 'Roboto Medium';
+}

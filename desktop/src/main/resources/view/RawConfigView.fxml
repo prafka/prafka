@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.fxmisc.richtext.CodeArea?>
+<?import org.fxmisc.flowless.VirtualizedScrollPane?>
+
+<AnchorPane fx:id="paneRoot" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prafka.desktop.controller.RawConfigController">
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <center>
+            <GridPane alignment="CENTER">
+                <VirtualizedScrollPane GridPane.rowIndex="0" GridPane.columnIndex="0">
+                    <content>
+                        <CodeArea fx:id="codeArea" editable="false" wrapText="true" styleClass="code-area-kv"/>
+                    </content>
+                </VirtualizedScrollPane>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints vgrow="ALWAYS" />
+                </rowConstraints>
+            </GridPane>
+        </center>
+        <bottom>
+            <HBox alignment="CENTER_RIGHT" styleClass="button-block" spacing="10">
+                <Button fx:id="buttonCancel" mnemonicParsing="false" styleClass="secondary" text="%common.cancel" />
+                <Button fx:id="buttonCopy" mnemonicParsing="false" styleClass="secondary" text="%common.copyToClipboard"/>
+            </HBox>
+        </bottom>
+    </BorderPane>
+</AnchorPane>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.fxmisc.flowless.VirtualizedScrollPane?>
+<?import org.fxmisc.richtext.CodeArea?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane fx:id="paneRoot" styleClass="pd-t-1" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prafka.desktop.controller.topic.TopicTabProduceController">
+    <VBox styleClass="content-block-main, pd-1" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <GridPane VBox.vgrow="ALWAYS">
+            <GridPane GridPane.rowIndex="0" GridPane.columnIndex="0">
+                <VBox GridPane.rowIndex="0" GridPane.columnIndex="0">
+                    <HBox alignment="CENTER_LEFT">
+                        <Label text="%common.key" styleClass="font-medium" minWidth="-Infinity">
+                            <HBox.margin>
+                                <Insets right="15" />
+                            </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="comboBoxKeyFormat" minWidth="-Infinity">
+                            <HBox.margin>
+                                <Insets right="15" />
+                            </HBox.margin>
+                        </ComboBox>
+                        <StackPane alignment="CENTER_LEFT">
+                            <ComboBox fx:id="comboBoxKeySchema" visible="false" promptText="%topicTabProduceView.selectSchema" />
+                            <Button fx:id="buttonGenerateKey" text="%common.generate" styleClass="secondary-outline" />
+                        </StackPane>
+                        <VBox.margin>
+                            <Insets bottom="15" />
+                        </VBox.margin>
+                    </HBox>
+                    <VirtualizedScrollPane VBox.vgrow="ALWAYS">
+                        <content>
+                            <CodeArea fx:id="codeAreaKey" wrapText="true" />
+                        </content>
+                    </VirtualizedScrollPane>
+                    <GridPane.margin>
+                        <Insets bottom="20" />
+                    </GridPane.margin>
+                </VBox>
+                <VBox GridPane.rowIndex="1" GridPane.columnIndex="0">
+                    <HBox alignment="CENTER_LEFT">
+                        <Label text="%common.value" styleClass="font-medium" minWidth="-Infinity">
+                            <HBox.margin>
+                                <Insets right="15" />
+                            </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="comboBoxValueFormat" minWidth="-Infinity">
+                            <HBox.margin>
+                                <Insets right="15" />
+                            </HBox.margin>
+                        </ComboBox>
+                        <StackPane alignment="CENTER_LEFT">
+                            <ComboBox fx:id="comboBoxValueSchema" visible="false" promptText="%topicTabProduceView.selectSchema" />
+                            <Button fx:id="buttonGenerateValue" text="%common.generate" styleClass="secondary-outline" />
+                        </StackPane>
+                        <VBox.margin>
+                            <Insets bottom="15" />
+                        </VBox.margin>
+                    </HBox>
+                    <VirtualizedScrollPane VBox.vgrow="ALWAYS">
+                        <content>
+                            <CodeArea fx:id="codeAreaValue" wrapText="true" />
+                        </content>
+                    </VirtualizedScrollPane>
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Button fx:id="buttonProduce" text="%common.produce" styleClass="primary" />
+                        <StackPane alignment="CENTER_LEFT">
+                            <HBox fx:id="paneAlert" alignment="CENTER_LEFT" />
+                            <ProgressIndicator fx:id="progressIndicatorProduce" maxHeight="20" maxWidth="20" visible="false" />
+                        </StackPane>
+                        <VBox.margin>
+                            <Insets top="15" />
+                        </VBox.margin>
+                    </HBox>
+                </VBox>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints vgrow="ALWAYS" percentHeight="30" />
+                    <RowConstraints vgrow="ALWAYS" percentHeight="70" />
+                </rowConstraints>
+                <GridPane.margin>
+                    <Insets right="10" />
+                </GridPane.margin>
+            </GridPane>
+            <VBox GridPane.rowIndex="0" GridPane.columnIndex="1" spacing="15">
+                <TitledPane animated="false" expanded="false" text="%common.headers" styleClass="titled-pane-font-medium">
+                    <ScrollPane styleClass="content-background" fitToWidth="true" fitToHeight="true" minHeight="200" prefHeight="200" maxHeight="200">
+                        <VBox spacing="10" style="-fx-padding: 0.5em 0.8em 0.8em 0.8em;">
+                            <VBox fx:id="paneHeaders" spacing="10" />
+                            <Button fx:id="buttonAddHeader" styleClass="secondary-outline" text="%topicTabProduceView.addHeader" />
+                        </VBox>
+                    </ScrollPane>
+                </TitledPane>
+                <TitledPane animated="false" expanded="false" text="%common.additionalProperties" styleClass="titled-pane-font-medium">
+                    <FlowPane alignment="CENTER_LEFT" hgap="20" vgap="10">
+                        <HBox alignment="CENTER_LEFT" spacing="10">
+                            <Label text="%common.partition" />
+                            <StackPane>
+                                <ComboBox fx:id="comboBoxPartition" />
+                                <ProgressIndicator fx:id="progressIndicatorPartition" maxWidth="20" maxHeight="20" />
+                            </StackPane>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10">
+                            <Label text="%common.compression" />
+                            <ComboBox fx:id="comboBoxCompression" />
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="20">
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <Label text="Asks" />
+                                <ComboBox fx:id="comboBoxAsks" />
+                            </HBox>
+                            <CheckBox fx:id="checkBoxIdempotence" text="Idempotence" selected="true" />
+                        </HBox>
+                    </FlowPane>
+                </TitledPane>
+<!--                <TitledPane animated="false" expanded="false" text="%topicTabProduceView.flow" styleClass="titled-pane-font-medium">-->
+<!-- todo -->
+<!--                </TitledPane>-->
+                <VBox spacing="10" VBox.vgrow="ALWAYS">
+                    <Label text="%topicTabProduceView.producedRecords" styleClass="font-medium" />
+                    <TableView fx:id="tableViewProducedRecords" VBox.vgrow="ALWAYS">
+                        <placeholder><Label fx:id="labelEmptyTableView" /></placeholder>
+                    </TableView>
+                </VBox>
+                <GridPane.margin>
+                    <Insets left="10" />
+                </GridPane.margin>
+            </VBox>
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="ALWAYS" />
+            </rowConstraints>
+        </GridPane>
+    </VBox>
+</AnchorPane>

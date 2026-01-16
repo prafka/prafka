@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.fxmisc.flowless.VirtualizedScrollPane?>
+<?import org.fxmisc.richtext.CodeArea?>
+
+<AnchorPane fx:id="paneRoot" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prafka.desktop.controller.topic.TopicRecordController">
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <center>
+            <GridPane alignment="CENTER">
+                <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.vgrow="ALWAYS">
+                    <Tab text="%common.data">
+                        <VBox>
+                            <HBox styleClass="pd-t-1" />
+                            <GridPane VBox.vgrow="ALWAYS">
+                                <VBox GridPane.rowIndex="0" GridPane.columnIndex="0">
+                                    <BorderPane fx:id="paneKey">
+                                        <left>
+                                            <Label text="%common.key" styleClass="font-medium"/>
+                                        </left>
+                                        <VBox.margin>
+                                            <Insets bottom="5.0"/>
+                                        </VBox.margin>
+                                    </BorderPane>
+                                    <VirtualizedScrollPane VBox.vgrow="ALWAYS">
+                                        <content>
+                                            <CodeArea fx:id="codeAreaKey" editable="false" wrapText="true" />
+                                        </content>
+                                    </VirtualizedScrollPane>
+                                </VBox>
+                                <VBox GridPane.rowIndex="1" GridPane.columnIndex="0">
+                                    <BorderPane fx:id="paneValue">
+                                        <left>
+                                            <Label text="%common.value" styleClass="font-medium"/>
+                                        </left>
+                                        <VBox.margin>
+                                            <Insets top="20.0" bottom="5.0"/>
+                                        </VBox.margin>
+                                    </BorderPane>
+                                    <VirtualizedScrollPane VBox.vgrow="ALWAYS">
+                                        <content>
+                                            <CodeArea fx:id="codeAreaValue" editable="false" wrapText="true" />
+                                        </content>
+                                    </VirtualizedScrollPane>
+                                </VBox>
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints vgrow="ALWAYS" percentHeight="30" />
+                                    <RowConstraints vgrow="ALWAYS" percentHeight="70" />
+                                </rowConstraints>
+                            </GridPane>
+                        </VBox>
+                    </Tab>
+                    <Tab text="%common.headers">
+                        <ScrollPane styleClass="root-background" fitToWidth="true" fitToHeight="true">
+                            <VBox fx:id="boxHeaders">
+                                <HBox styleClass="pd-t-1" />
+                            </VBox>
+                        </ScrollPane>
+                    </Tab>
+                    <Tab text="%common.metadata">
+                        <ScrollPane styleClass="root-background" fitToWidth="true" fitToHeight="true">
+                            <VBox>
+                                <HBox styleClass="pd-t-1" />
+                                <GridPane fx:id="paneMetadata">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50" />
+                                    </columnConstraints>
+                                </GridPane>
+                            </VBox>
+                        </ScrollPane>
+                    </Tab>
+                </TabPane>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="80" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints vgrow="ALWAYS" />
+                </rowConstraints>
+                <BorderPane.margin>
+                    <Insets bottom="20.0" top="20.0" />
+                </BorderPane.margin>
+            </GridPane>
+        </center>
+        <bottom>
+            <HBox alignment="CENTER_RIGHT" styleClass="button-block">
+                <Button fx:id="buttonCancel" mnemonicParsing="false" styleClass="secondary" text="%common.cancel">
+                    <HBox.margin>
+                        <Insets right="10.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="buttonCopy" mnemonicParsing="false" styleClass="secondary" text="%common.copyToClipboard">
+                    <HBox.margin>
+                        <Insets right="10.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="buttonExport" mnemonicParsing="false" styleClass="secondary" text="%common.export" />
+            </HBox>
+        </bottom>
+    </BorderPane>
+</AnchorPane>

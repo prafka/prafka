@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane fx:id="paneRoot" HBox.Hgrow="ALWAYS" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prafka.desktop.controller.cluster.AddEditClusterTabKafkaClusterController">
+    <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <HBox>
+            <Label text="%common.name" styleClass="font-medium" />
+            <Label text=" *" styleClass="font-medium, font-red" />
+            <VBox.margin>
+                <Insets bottom="5.0" />
+            </VBox.margin>
+        </HBox>
+        <TextField fx:id="textFieldName" />
+        <Label styleClass="label-desc" text="%createClusterView.labelNameDescription">
+            <VBox.margin>
+                <Insets top="3.0" />
+            </VBox.margin>
+        </Label>
+        <HBox>
+            <Label text="%createClusterView.labelBootstrapServers" styleClass="font-medium" />
+            <Label text=" *" styleClass="font-medium, font-red" />
+            <VBox.margin>
+                <Insets top="20.0" bottom="5.0" />
+            </VBox.margin>
+        </HBox>
+        <TextField fx:id="textFieldBootstrapServers" promptText="localhost:9092" />
+        <Label styleClass="label-desc" text="%createClusterView.labelBootstrapServersDescription">
+            <VBox.margin>
+                <Insets top="3.0" />
+            </VBox.margin>
+        </Label>
+        <Label text="%createClusterView.labelAuthenticationMethod" styleClass="font-medium">
+            <VBox.margin>
+                <Insets top="20.0" bottom="7.5" />
+            </VBox.margin>
+        </Label>
+        <HBox spacing="10">
+            <RadioButton fx:id="radioButtonNoneAuthentication" mnemonicParsing="false" selected="true" text="%createClusterView.noneAuthentication" prefWidth="120" styleClass="card-radio-button, card-radio-button-sm">
+                <toggleGroup>
+                    <ToggleGroup fx:id="toggleGroupAuthenticationMethod" />
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="radioButtonSaslAuthentication" mnemonicParsing="false" text="SASL" toggleGroup="$toggleGroupAuthenticationMethod" prefWidth="120" styleClass="card-radio-button, card-radio-button-sm" />
+            <RadioButton fx:id="radioButtonSslAuthentication" mnemonicParsing="false" text="SSL" toggleGroup="$toggleGroupAuthenticationMethod" prefWidth="120" styleClass="card-radio-button, card-radio-button-sm" />
+        </HBox>
+        <VBox fx:id="paneAuthentication" />
+        <TitledPane animated="false" expanded="false" text="%common.additionalProperties" styleClass="titled-pane-font-medium">
+            <VBox>
+                <TextArea fx:id="textAreaAdditionalProperties" text="default.api.timeout.ms=5000&#10;request.timeout.ms=5000" minHeight="140" prefHeight="140" />
+            </VBox>
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+        </TitledPane>
+        <Button fx:id="buttonTestConnection" mnemonicParsing="false" styleClass="secondary" text="%createClusterView.buttonTestConnection">
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+        </Button>
+    </VBox>
+</AnchorPane>

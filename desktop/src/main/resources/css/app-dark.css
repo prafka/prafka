@@ -1,0 +1,322 @@
+.scroll-pane.root-background > .viewport {
+    -fx-background-color: #242526;
+}
+
+.scroll-pane.content-background > .viewport {
+    -fx-background-color: #1B1B1D;
+}
+
+.toggle-button-tab {
+    -fx-background-color: transparent;
+    -fx-border-color: #242526;
+    -fx-text-fill: #CCCCCC;
+}
+
+.toggle-button-tab:hover {
+    -fx-background-color: transparent;
+    -fx-text-fill: #EEEEEE;
+}
+
+.toggle-button-tab:selected,
+.toggle-button-tab:selected:hover {
+    -fx-background-color: transparent;
+    -fx-border-color: #4065DD;
+    -fx-text-fill: #4065DD;
+}
+
+.button-link {
+    -fx-text-fill: #A2A1A7;
+}
+
+.button-link:hover {
+    -fx-text-fill: #CCCCCC;
+}
+
+.sidebar-block {
+
+}
+
+.sidebar-block-top-cluster .combo-box-base {
+    -fx-background-color: #1B1B1D;
+}
+
+.sidebar-block .button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #CCCCCC;
+}
+
+.sidebar-block .button.current {
+    -fx-background-color: #1f1f21;
+    -fx-border-color: #1f1f21;
+    -fx-text-fill: #4065DD;
+}
+
+.sidebar-block .button.current:hover {
+    -fx-text-fill: #3659c9;
+}
+
+.sidebar-block .button:hover {
+    -fx-background-color: #1f1f21;
+    -fx-border-color: #1f1f21;
+    -fx-text-fill: #EEEEEE;
+}
+
+.content-block {
+
+}
+
+.content-block-header .h1-comeback,
+.content-block-header .h1-separator {
+    -fx-text-fill: #CCCCCC;
+}
+
+.content-block-header .h1-comeback:hover {
+    -fx-text-fill: #EEEEEE;
+}
+
+.content-block-main {
+    -fx-background-color: #1B1B1D;
+    -fx-border-color: #18181a;
+}
+
+.label-desc {
+    -fx-text-fill: #A2A1A7;
+}
+
+.shape-default {
+    -fx-fill: #1f1f21;
+}
+
+.shape-success {
+    -fx-fill: #30A66D;
+}
+
+.shape-warn {
+    -fx-fill: #EE9D2B;
+}
+
+.shape-error {
+    -fx-fill: #E54D2E;
+}
+
+.primary {
+    -fx-background-color: #4065DD;
+    -fx-border-color: #4065DD;
+    -fx-text-fill: #FFFFFF;
+}
+
+.primary:hover {
+    -fx-background-color: #3659c9;
+    -fx-border-color: #3659c9;
+}
+
+.secondary {
+    -fx-background-color: #1f1f21;
+    -fx-border-color: #1f1f21;
+    -fx-text-fill: #EEEEEE;
+}
+
+.secondary:hover {
+    -fx-background-color: #1B1B1D;
+    -fx-border-color: #1B1B1D;
+    -fx-text-fill: #EEEEEE;
+}
+
+.secondary:default {
+    -fx-background-color: #1f1f21;
+    -fx-border-color: #1f1f21;
+    -fx-text-fill: #4065DD;
+}
+
+.secondary:default:hover {
+    -fx-background-color: #1B1B1D;
+    -fx-border-color: #1B1B1D;
+    -fx-text-fill: #3659c9;
+}
+
+.filter-block .secondary {
+    -fx-background-color: #242526;
+    -fx-border-color: #242526;
+}
+
+.filter-block .secondary:hover {
+    -fx-background-color: #28292a;
+    -fx-border-color: #28292a;
+}
+
+.secondary-outline {
+    -fx-background-color: transparent;
+    -fx-border-color: #3b3c3d;
+}
+
+.secondary-outline:hover {
+    -fx-border-color: #4b4c4d;
+}
+
+.summary-card .title {
+    -fx-text-fill: #AAAAAA;
+}
+
+.summary-card .content,
+.summary-card .content .label {
+    -fx-text-fill: #4065DD;
+}
+
+.summary-card-consume .label {
+    -fx-text-fill: #CCCCCC;
+}
+
+.summary-card-consume .title {
+    -fx-text-fill: #AAAAAA;
+}
+
+.summary-card-consume .button {
+    -fx-text-fill: #4065DD;
+}
+
+.summary-card-consume .button:hover {
+    -fx-text-fill: #3659c9;
+}
+
+.card,
+.card-radio-button {
+    -fx-background-color: #1B1B1D;
+    -fx-border-color: #18181a;
+}
+
+.card .title,
+.card .title-regular {
+    -fx-text-fill: #CCCCCC;
+}
+
+.card .content,
+.card .content .label {
+    -fx-text-fill: #4065DD;
+}
+
+.info-block {
+    -fx-background-color: #1B1B1D;
+    -fx-border-color: #18181a;
+}
+
+.info-block .content {
+    -fx-text-fill: #A2A1A7;
+}
+
+.button-block {
+    -fx-border-color: #1B1B1D;
+}
+
+.font-purple {
+    -fx-text-fill: #cb398f;
+}
+
+.font-gray {
+    -fx-text-fill: #CCCCCC;
+}
+
+.font-green {
+    -fx-text-fill: #30A66D;
+}
+
+.font-red {
+    -fx-text-fill: #E54D2E;
+}
+
+.badge-gray {
+    -fx-background-color: #222225;
+    -fx-text-fill: #A1A0A7;
+}
+
+.badge-violet {
+    -fx-background-color: #251E40;
+    -fx-text-fill: #9E8CFC;
+}
+
+.badge-blue {
+    -fx-background-color: #10243E;
+    -fx-text-fill: #52A9FF;
+}
+
+.badge-green {
+    -fx-background-color: #0F291E;
+    -fx-text-fill: #4CC38A;
+}
+
+.badge-yellow {
+    -fx-background-color: #341C00;
+    -fx-text-fill: #F1A10D;
+}
+
+.badge-red {
+    -fx-background-color: #29130F;
+    -fx-text-fill: #F16B50;
+}
+
+.snackbar {
+    -fx-background-color: #1B1B1D;
+    -fx-border-color: #18181a;
+    -fx-text-fill: #CCCCCC;
+}
+
+.code-area {
+    -fx-background-color: #1B1B1D;
+}
+
+.code-area .caret {
+    -fx-stroke: #EEEEEE;
+}
+
+.code-area .text {
+    -fx-fill: #EEEEEE;
+}
+
+.code-area .lineno {
+    -fx-background-color: #242526;
+    -fx-text-fill: #9e9ea1;
+}
+
+.code-area .lineno .text {
+    -fx-fill: #A2A1A7;
+}
+
+.code-area .main-selection {
+    -fx-fill: #10243E;
+}
+
+.code-area-border {
+    -fx-border-color: #3b3c3d;
+}
+
+.code-area .default {
+    -fx-fill: #EEEEEE;
+}
+
+.code-area-kv .key {
+    -fx-fill: #6E56CF;
+}
+
+.code-area-kv .value {
+    -fx-fill: #cb398f;
+}
+
+.code-area-avro .field-name {
+    -fx-fill: #6E56CF;
+}
+
+.code-area-avro .value-string,
+.code-area-avro .value-number,
+.code-area-avro .value-bool {
+    -fx-fill: #cb398f;
+}
+
+.code-area-json .field-name {
+    -fx-fill: #6E56CF;
+}
+
+.code-area-json .value-string,
+.code-area-json .value-number,
+.code-area-json .value-bool {
+    -fx-fill: #cb398f;
+}
