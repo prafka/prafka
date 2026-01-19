@@ -14,19 +14,19 @@ public class SaslAuthenticationProperties {
     private SaslSecurityProtocol securityProtocol;
     private SaslMechanism mechanism;
     private String username;
-    private String password;
+    private char[] password;
 
     public Properties properties() {
         var properties = new Properties();
         properties.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, securityProtocol.name());
         properties.put(SaslConfigs.SASL_MECHANISM, mechanism.getValue());
         if (mechanism == SaslMechanism.PLAIN) {
-            if (StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)) {
+            if (StringUtils.isNotBlank(username) && password != null && password.length > 0) {
                 properties.put(SaslConfigs.SASL_JAAS_CONFIG, JaasUtils.getSaslJaasPlainConfig(username, password));
             }
         }
         if (mechanism == SaslMechanism.SCRAM_SHA_256 || mechanism == SaslMechanism.SCRAM_SHA_512) {
-            if (StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)) {
+            if (StringUtils.isNotBlank(username) && password != null && password.length > 0) {
                 properties.put(SaslConfigs.SASL_JAAS_CONFIG, JaasUtils.getSaslJaasScramConfig(username, password));
             }
         }

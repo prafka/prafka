@@ -10,9 +10,9 @@ import java.util.function.BiFunction;
 public class BasicAuthenticationProperties {
 
     private String username;
-    private String password;
+    private char[] password;
 
-    public Properties properties(BiFunction<String, String, Map<String, String>> function) {
+    public Properties properties(BiFunction<String, char[], Map<String, String>> function) {
         var properties = new Properties();
         properties.putAll(function.apply(username, password));
         return properties;

@@ -34,7 +34,7 @@ class ConnectPropertiesTest {
 
         var basicAuthenticationProperties = BasicAuthenticationProperties.builder()
                 .username(expectedUsername)
-                .password(expectedPassword);
+                .password(expectedPassword.toCharArray());
 
         var connectProperties = ConnectProperties.builder()
                 .url("")

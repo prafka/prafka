@@ -35,7 +35,7 @@ class SchemaRegistryPropertiesTest {
 
         var basicAuthenticationProperties = BasicAuthenticationProperties.builder()
                 .username(expectedUsername)
-                .password(expectedPassword);
+                .password(expectedPassword.toCharArray());
 
         var schemaRegistryProperties = SchemaRegistryProperties.builder()
                 .url("")

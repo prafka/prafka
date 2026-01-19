@@ -26,8 +26,8 @@ public class SchemaRegistryProperties {
             properties.put(SchemaRegistryClientConfig.CLIENT_NAMESPACE + SchemaRegistryClientConfig.BASIC_AUTH_CREDENTIALS_SOURCE, "USER_INFO");
             properties.putAll(
                     basicAuthenticationProperties.build().properties((username, password) -> {
-                        if (StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)) {
-                            return Map.of(SchemaRegistryClientConfig.CLIENT_NAMESPACE + SchemaRegistryClientConfig.USER_INFO_CONFIG, username + ":" + password);
+                        if (StringUtils.isNotBlank(username) && password != null && password.length > 0) {
+                            return Map.of(SchemaRegistryClientConfig.CLIENT_NAMESPACE + SchemaRegistryClientConfig.USER_INFO_CONFIG, username + ":" + new String(password));
                         }
                         return Collections.emptyMap();
                     })

@@ -16,12 +16,12 @@ class BasicAuthenticationPropertiesTest {
 
         var basicAuthenticationProperties = BasicAuthenticationProperties.builder()
                 .username(expectedUsername)
-                .password(expectedPassword)
+                .password(expectedPassword.toCharArray())
                 .build();
 
         // When
         var properties = basicAuthenticationProperties.properties((username, password) ->
-                Map.of("username", username, "password", password));
+                Map.of("username", username, "password", new String(password)));
 
         // Then
         assertEquals(expectedUsername, properties.getProperty("username"));

@@ -20,7 +20,7 @@ public class ConnectionPropertiesService {
                     .securityProtocol(cluster.getSaslAuthentication().getSecurityProtocol())
                     .mechanism(cluster.getSaslAuthentication().getSaslMechanism())
                     .username(cluster.getSaslAuthentication().getUsername())
-                    .password(StringUtils.valueOf(cluster.getSaslAuthentication().getPassword()));
+                    .password(cluster.getSaslAuthentication().getPassword());
             kafkaProperties.saslAuthenticationProperties(saslAuthenticationProperties);
         }
         if (cluster.getAuthenticationMethod() == AuthenticationMethod.SSL) {
@@ -38,7 +38,7 @@ public class ConnectionPropertiesService {
         if (schemaRegistry.getAuthenticationMethod() == AuthenticationMethod.BASIC) {
             var basicAuthenticationProperties = BasicAuthenticationProperties.builder()
                     .username(schemaRegistry.getBasicAuthentication().getUsername())
-                    .password(StringUtils.valueOf(schemaRegistry.getBasicAuthentication().getPassword()));
+                    .password(schemaRegistry.getBasicAuthentication().getPassword());
             schemaRegistryProperties.basicAuthenticationProperties(basicAuthenticationProperties);
         }
         if (schemaRegistry.getAuthenticationMethod() == AuthenticationMethod.TOKEN) {
@@ -61,7 +61,7 @@ public class ConnectionPropertiesService {
         if (connect.getAuthenticationMethod() == AuthenticationMethod.BASIC) {
             var basicAuthenticationProperties = BasicAuthenticationProperties.builder()
                     .username(connect.getBasicAuthentication().getUsername())
-                    .password(StringUtils.valueOf(connect.getBasicAuthentication().getPassword()));
+                    .password(connect.getBasicAuthentication().getPassword());
             connectProperties.basicAuthenticationProperties(basicAuthenticationProperties);
         }
         if (connect.getAuthenticationMethod() == AuthenticationMethod.SSL) {

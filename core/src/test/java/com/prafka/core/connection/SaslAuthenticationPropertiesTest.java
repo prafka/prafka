@@ -17,7 +17,7 @@ class SaslAuthenticationPropertiesTest {
                 .securityProtocol(SaslSecurityProtocol.SASL_PLAINTEXT)
                 .mechanism(SaslMechanism.PLAIN)
                 .username(expectedUsername)
-                .password(expectedPassword)
+                .password(expectedPassword.toCharArray())
                 .build();
 
         // When
@@ -39,7 +39,7 @@ class SaslAuthenticationPropertiesTest {
                 .securityProtocol(SaslSecurityProtocol.SASL_SSL)
                 .mechanism(SaslMechanism.SCRAM_SHA_256)
                 .username(expectedUsername)
-                .password(expectedPassword)
+                .password(expectedPassword.toCharArray())
                 .build();
 
         // When

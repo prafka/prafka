@@ -22,8 +22,8 @@ public class ConnectProperties {
         if (authenticationMethod == AuthenticationMethod.BASIC) {
             properties.putAll(
                     basicAuthenticationProperties.build().properties((username, password) -> {
-                        if (StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)) {
-                            return Map.of("basic.username", username, "basic.password", password);
+                        if (StringUtils.isNotBlank(username) && password != null && password.length > 0) {
+                            return Map.of("basic.username", username, "basic.password", new String(password));
                         }
                         return Collections.emptyMap();
                     })
