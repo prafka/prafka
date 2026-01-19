@@ -11,16 +11,16 @@ class TokenAuthenticationPropertiesTest {
     @Test
     void shouldFillProperties() {
         // Given
-        var expectedToken = "testToken";
+        var expectedToken = "testToken".toCharArray();
 
         var tokenAuthenticationProperties = TokenAuthenticationProperties.builder()
                 .token(expectedToken)
                 .build();
 
         // When
-        var properties = tokenAuthenticationProperties.properties(token -> Map.of("token", token));
+        var properties = tokenAuthenticationProperties.properties(token -> Map.of("token", new String(token)));
 
         // Then
-        assertEquals(expectedToken, properties.getProperty("token"));
+        assertEquals(new String(expectedToken), properties.getProperty("token"));
     }
 }

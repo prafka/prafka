@@ -37,8 +37,8 @@ public class SchemaRegistryProperties {
             properties.put(SchemaRegistryClientConfig.CLIENT_NAMESPACE + SchemaRegistryClientConfig.BEARER_AUTH_CREDENTIALS_SOURCE, "STATIC_TOKEN");
             properties.putAll(
                     tokenAuthenticationProperties.build().properties(token -> {
-                        if (StringUtils.isNotBlank(token)) {
-                            return Map.of(SchemaRegistryClientConfig.CLIENT_NAMESPACE + SchemaRegistryClientConfig.BEARER_AUTH_TOKEN_CONFIG, token);
+                        if (token != null && token.length > 0) {
+                            return Map.of(SchemaRegistryClientConfig.CLIENT_NAMESPACE + SchemaRegistryClientConfig.BEARER_AUTH_TOKEN_CONFIG, new String(token));
                         }
                         return Collections.emptyMap();
                     })

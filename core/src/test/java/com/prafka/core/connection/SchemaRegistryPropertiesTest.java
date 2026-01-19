@@ -57,7 +57,7 @@ class SchemaRegistryPropertiesTest {
         var expectedToken = "testToken";
 
         var tokenAuthenticationProperties = TokenAuthenticationProperties.builder()
-                .token(expectedToken);
+                .token(expectedToken.toCharArray());
 
         var schemaRegistryProperties = SchemaRegistryProperties.builder()
                 .url("")

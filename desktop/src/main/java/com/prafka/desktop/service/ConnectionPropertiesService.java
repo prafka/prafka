@@ -43,7 +43,7 @@ public class ConnectionPropertiesService {
         }
         if (schemaRegistry.getAuthenticationMethod() == AuthenticationMethod.TOKEN) {
             var tokenAuthenticationProperties = TokenAuthenticationProperties.builder()
-                    .token(StringUtils.valueOf(schemaRegistry.getTokenAuthentication().getToken()));
+                    .token(schemaRegistry.getTokenAuthentication().getToken());
             schemaRegistryProperties.tokenAuthenticationProperties(tokenAuthenticationProperties);
         }
         if (schemaRegistry.getAuthenticationMethod() == AuthenticationMethod.SSL) {

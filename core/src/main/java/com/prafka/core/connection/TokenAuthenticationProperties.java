@@ -9,9 +9,9 @@ import java.util.function.Function;
 @Builder
 public class TokenAuthenticationProperties {
 
-    private String token;
+    private char[] token;
 
-    public Properties properties(Function<String, Map<String, String>> function) {
+    public Properties properties(Function<char[], Map<String, String>> function) {
         var properties = new Properties();
         properties.putAll(function.apply(token));
         return properties;
