@@ -11,9 +11,9 @@ import jakarta.inject.Singleton;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.TopicPartition;
-import org.openjdk.nashorn.api.scripting.NashornScriptEngine;
-import org.openjdk.nashorn.api.scripting.NashornScriptEngineFactory;
-import org.openjdk.nashorn.api.scripting.ScriptObjectMirror;
+import org.graalvm.polyglot.Context;
+import org.graalvm.polyglot.Engine;
+import org.graalvm.polyglot.Source;
 
 import java.time.Duration;
 import java.util.HashMap;
@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
 @Singleton
 public class RecordService extends AbstractService {
 
-    private static final NashornScriptEngine NASHORN_SCRIPT_ENGINE = (NashornScriptEngine) new NashornScriptEngineFactory().getScriptEngine();
+    private static final Engine GRAAL_ENGINE = Engine.create();
 
     private final TopicService topicService;
     private final RecordSerializationService serializationService;
@@ -118,7 +118,7 @@ public class RecordService extends AbstractService {
 
             var expressionList = filter.expressions().stream()
                     .filter(ConsumeFilter.Expression::isActive)
-                    .map(it -> StreamUtils.tryOrEmpty(() -> NASHORN_SCRIPT_ENGINE.compile("function() { " + it.code() + " }")))
+                    .map(it -> StreamUtils.tryOrEmpty(() -> Source.create("js", "(function(key, value, headers, offset, partition, timestamp) { " + it.code() + " })")))
                     .filter(Optional::isPresent)
                     .map(Optional::get)
                     .toList();
@@ -139,18 +139,17 @@ public class RecordService extends AbstractService {
                         var match = true;
                         if (!expressionList.isEmpty()) {
                             match = false;
-                            var bindings = NASHORN_SCRIPT_ENGINE.createBindings();
-                            bindings.put("key", record.key() == null ? null : resultRecord.isKeyIsJson() ? deserializationService.tryToMap(resultRecord.getKey()) : resultRecord.getKey());
-                            bindings.put("value", record.value() == null ? null : resultRecord.isValueIsJson() ? deserializationService.tryToMap(resultRecord.getValue()) : resultRecord.getValue());
-                            bindings.put("headers", resultRecord.getHeaders());
-                            bindings.put("offset", record.offset());
-                            bindings.put("partition", record.partition());
-                            bindings.put("timestamp", record.timestamp());
-                            for (var expression : expressionList) {
-                                try {
-                                    match = match || (Boolean) ((ScriptObjectMirror) expression.eval(bindings)).call(null);
-                                } catch (Exception e) {
-                                    logDebugError(e);
+                            var recordKey = record.key() == null ? null : resultRecord.isKeyIsJson() ? deserializationService.tryToMap(resultRecord.getKey()) : resultRecord.getKey();
+                            var recordValue = record.value() == null ? null : resultRecord.isValueIsJson() ? deserializationService.tryToMap(resultRecord.getValue()) : resultRecord.getValue();
+                            try (var context = Context.newBuilder("js").engine(GRAAL_ENGINE).allowAllAccess(true).build()) {
+                                for (var expression : expressionList) {
+                                    try {
+                                        match = match || context.eval(expression)
+                                                .execute(recordKey, recordValue, resultRecord.getHeaders(), record.offset(), record.partition(), record.timestamp())
+                                                .asBoolean();
+                                    } catch (Exception e) {
+                                        logDebugError(e);
+                                    }
                                 }
                             }
                         }
@@ -179,7 +178,12 @@ public class RecordService extends AbstractService {
     }
 
     public CompletableFuture<Void> tryCompileExpression(String code) {
-        return CompletableFuture.runAsync(() -> StreamUtils.tryReturn(() -> NASHORN_SCRIPT_ENGINE.compile("function() { " + code + " }")));
+        return CompletableFuture.runAsync(() -> StreamUtils.tryReturn(() -> {
+            try (var context = Context.newBuilder("js").engine(GRAAL_ENGINE).allowAllAccess(true).build()) {
+                context.eval(Source.create("js", "(function(key, value, headers, offset, partition, timestamp) { " + code + " })"));
+            }
+            return null;
+        }));
     }
 
     public CompletableFuture<Record> produce(String clusterId, String topicName, NewRecord record) {

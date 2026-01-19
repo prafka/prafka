@@ -16,7 +16,7 @@
     <properties>
         <confluent.version>8.1.0</confluent.version>
         <kafka-connect-client.version>4.0.5</kafka-connect-client.version>
-        <nashorn.version>15.7</nashorn.version>
+        <graaljs.version>24.1.1</graaljs.version>
         <datafaker.version>2.5.3</datafaker.version>
     </properties>
 
@@ -63,9 +63,15 @@
             <artifactId>jakarta.inject-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.openjdk.nashorn</groupId>
-            <artifactId>nashorn-core</artifactId>
-            <version>${nashorn.version}</version>
+            <groupId>org.graalvm.polyglot</groupId>
+            <artifactId>polyglot</artifactId>
+            <version>${graaljs.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.graalvm.polyglot</groupId>
+            <artifactId>js</artifactId>
+            <version>${graaljs.version}</version>
+            <type>pom</type>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
