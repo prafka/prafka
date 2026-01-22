@@ -11,8 +11,8 @@
 
     <properties>
         <java.version>25</java.version>
-        <spring-boot.version>3.5.8</spring-boot.version>
-        <kafka-clients.version>4.0.1</kafka-clients.version>
+        <spring-boot.version>3.5.9</spring-boot.version>
+        <kafka-clients.version>4.1.1</kafka-clients.version>
         <commons-io.version>2.21.0</commons-io.version>
         <commons-lang3.version>3.20.0</commons-lang3.version>
         <resilience4j.version>2.3.0</resilience4j.version>

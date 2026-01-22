@@ -14,7 +14,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <confluent.version>8.1.0</confluent.version>
+        <confluent.version>8.1.1</confluent.version>
         <kafka-connect-client.version>4.0.5</kafka-connect-client.version>
         <nashorn.version>15.7</nashorn.version>
         <datafaker.version>2.5.3</datafaker.version>

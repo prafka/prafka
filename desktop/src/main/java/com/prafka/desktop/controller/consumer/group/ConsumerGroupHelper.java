@@ -14,6 +14,7 @@ public class ConsumerGroupHelper extends AbstractController {
             case COMPLETING_REBALANCE -> i18nService.get("consumerGroup.completingRebalanceDescription");
             case ASSIGNING -> "Assigning";
             case RECONCILING -> "Reconciling";
+            case NOT_READY -> "NotReady";
             case EMPTY -> i18nService.get("consumerGroup.emptyDescription");
             case DEAD -> i18nService.get("consumerGroup.deadDescription");
             case UNKNOWN -> i18nService.get("consumerGroup.unknownDescription");

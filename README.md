@@ -1,7 +1,7 @@
 <div align="center">
     <a href="https://prafka.com/desktop"><img src="readme/logo.png" alt="PRAFKA" /></a>
     <h1>PRAFKA</h1>
-    <h3>Open source, cross-platform application for manage, explore and analyze Apache Kafka</h3>
+    <h3>Open source, cross-platform GUI for manage, explore and analyze Apache Kafka</h3>
     <a href="https://prafka.com/desktop#demo">Demo</a> | <a href="https://docs.prafka.com/desktop">Docs</a> | <a href="https://prafka.com/desktop#download">Download</a> 
 </div>
 <br />
