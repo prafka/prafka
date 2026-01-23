@@ -14,6 +14,14 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/**
+ * Represents a Kafka consumer group with its members and offset information.
+ *
+ * <p>Contains group metadata including the group ID, state, coordinator node,
+ * member assignments, and committed offsets with lag calculation per partition.
+ *
+ * @see ConsumerGroupDescription
+ */
 @Getter
 public class ConsumerGroup {
 

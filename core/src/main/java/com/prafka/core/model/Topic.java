@@ -8,6 +8,14 @@ import org.apache.kafka.common.TopicPartitionInfo;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Represents a Kafka topic with its partitions and metadata.
+ *
+ * <p>Contains topic information including the unique ID, name, partition details
+ * (with offset ranges and replica assignments), and whether the topic is internal.
+ *
+ * @see TopicDescription
+ */
 @Getter
 public class Topic {
 

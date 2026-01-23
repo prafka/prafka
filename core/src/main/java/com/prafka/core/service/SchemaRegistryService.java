@@ -20,6 +20,15 @@ import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 
+/**
+ * Service for managing schemas in Confluent Schema Registry.
+ *
+ * <p>Provides operations to list subjects, retrieve schemas by subject and version,
+ * create and update schemas, check compatibility, update compatibility levels,
+ * and delete schemas. Supports Avro, JSON Schema, and Protobuf schema types.
+ *
+ * @see Schema
+ */
 @Named
 @Singleton
 public class SchemaRegistryService extends AbstractService {

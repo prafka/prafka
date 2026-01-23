@@ -3,6 +3,11 @@ package com.prafka.core.util;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Utility class for working with {@link ExecutorService} instances.
+ *
+ * <p>Provides methods for graceful shutdown of executor services with timeout handling.
+ */
 public class ExecutorUtils {
 
     public static void closeExecutor(ExecutorService executor) {

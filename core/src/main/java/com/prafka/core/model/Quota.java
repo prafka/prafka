@@ -7,6 +7,12 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Map;
 
+/**
+ * Represents a Kafka quota configuration.
+ *
+ * <p>Quotas allow limiting resource usage for users, client IDs, or IP addresses.
+ * This includes producer/consumer byte rates, connection rates, and request percentages.
+ */
 @Getter
 public class Quota {
 

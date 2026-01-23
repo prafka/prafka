@@ -8,6 +8,25 @@ import org.apache.kafka.common.security.auth.SecurityProtocol;
 
 import java.util.Properties;
 
+/**
+ * Configuration properties for SSL/TLS authentication with Kafka.
+ *
+ * <p>This class holds the keystore and truststore configuration required for
+ * establishing SSL/TLS secured connections to Kafka brokers.
+ *
+ * <p>Use the Lombok-generated builder to create instances:
+ * <pre>{@code
+ * SslAuthenticationProperties props = SslAuthenticationProperties.builder()
+ *     .keystoreLocation("/path/to/keystore.jks")
+ *     .keystorePassword("keystore-password")
+ *     .truststoreLocation("/path/to/truststore.jks")
+ *     .truststorePassword("truststore-password")
+ *     .build();
+ * }</pre>
+ *
+ * @see KafkaProperties
+ * @see AuthenticationMethod#SSL
+ */
 @Builder
 public class SslAuthenticationProperties {
 

@@ -12,6 +12,16 @@ import java.util.concurrent.CompletableFuture;
 import java.util.function.BinaryOperator;
 import java.util.function.Supplier;
 
+/**
+ * Utility class for working with streams, futures, and exception handling.
+ *
+ * <p>Provides helper methods for:
+ * <ul>
+ *   <li>Converting and combining Kafka futures into CompletableFutures</li>
+ *   <li>Reducing multiple future lists into a single combined future</li>
+ *   <li>Wrapping checked exceptions in lambdas (tryReturn, tryVoid, tryIgnore, tryOrEmpty)</li>
+ * </ul>
+ */
 public class StreamUtils {
 
     public static <T> CompletableFuture<List<T>> mapKafkaFutureToList(KafkaFuture<T> future) {

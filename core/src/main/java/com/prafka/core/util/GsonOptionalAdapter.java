@@ -14,6 +14,15 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Optional;
 
+/**
+ * Gson TypeAdapter for serializing and deserializing Java {@link Optional} values.
+ *
+ * <p>Empty optionals are serialized as JSON null. Present optionals are serialized
+ * as their contained value. Register using the provided {@link #FACTORY}.
+ *
+ * @param <T> the type contained in the Optional
+ * @see JsonFactory
+ */
 public class GsonOptionalAdapter<T> extends TypeAdapter<Optional<T>> {
 
     private final TypeAdapter<T> delegate;

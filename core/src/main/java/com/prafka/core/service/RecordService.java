@@ -26,6 +26,17 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/**
+ * Service for consuming and producing Kafka records.
+ *
+ * <p>Provides operations to consume records from topics with filtering support
+ * (by partition, offset, timestamp, and JavaScript expressions) and to produce
+ * new records with various serialization options.
+ *
+ * @see Record
+ * @see NewRecord
+ * @see ConsumeFilter
+ */
 @Named
 @Singleton
 public class RecordService extends AbstractService {
@@ -61,6 +72,43 @@ public class RecordService extends AbstractService {
                 });
     }
 
+    /**
+     * Consumes records from a Kafka topic with filtering and delivers them via callback.
+     *
+     * <p>This method performs the following steps:
+     * <ol>
+     *   <li>Filters partitions based on the filter criteria (specific partitions or all non-empty)</li>
+     *   <li>Determines starting offsets based on the filter's "from" type:
+     *     <ul>
+     *       <li>{@code BEGIN} - starts from the earliest offset in each partition</li>
+     *       <li>{@code END} - starts from recent offsets to fetch approximately maxResults records</li>
+     *       <li>{@code OFFSET} - starts from a specific offset (only partitions containing that offset)</li>
+     *       <li>{@code DATETIME/TIMESTAMP} - starts from offsets corresponding to the given timestamp</li>
+     *     </ul>
+     *   </li>
+     *   <li>Polls records in batches (max 100 per poll) with 1-second timeout</li>
+     *   <li>Deserializes each record's key and value using the specified serde types</li>
+     *   <li>Applies JavaScript filter expressions (if any) using Nashorn engine with bindings:
+     *     {@code key}, {@code value}, {@code headers}, {@code offset}, {@code partition}, {@code timestamp}</li>
+     *   <li>Delivers matching records to the callback until maxResults is reached or no more data</li>
+     *   <li>Sends {@link Record#LAST} as the final callback to signal completion</li>
+     * </ol>
+     *
+     * <p>The polling loop terminates when any of the following conditions is met:
+     * <ul>
+     *   <li>The requested number of records (maxResults) has been delivered</li>
+     *   <li>All partitions have been consumed up to their end offsets</li>
+     *   <li>Three consecutive empty polls occur</li>
+     *   <li>The cancel flag is set to true</li>
+     *   <li>A safety limit of 10 poll iterations is reached</li>
+     * </ul>
+     *
+     * @param clusterId the cluster identifier
+     * @param topic     the topic metadata including partition and offset information
+     * @param filter    the filter criteria specifying partitions, offsets, serdes, and expressions
+     * @param onRecord  callback invoked for each matching record and finally with {@link Record#LAST}
+     * @param cancel    atomic flag that can be set to true to stop consumption early
+     */
     private void consume(String clusterId, Topic topic, ConsumeFilter filter, Consumer<Record> onRecord, AtomicBoolean cancel) {
         var partitionList = topic.getPartitions().stream()
                 .filter(it -> (filter.partitions().isEmpty() || filter.partitions().contains(it.getId())) && it.getBeginOffset() < it.getEndOffset())

@@ -10,6 +10,15 @@ import org.sourcelab.kafka.connect.apiclient.request.dto.ConnectorTopics;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Represents a Kafka Connect connector.
+ *
+ * <p>Contains information about the connector including its name, type (source or sink),
+ * current state, worker assignment, configuration, associated topics, and task statuses.
+ *
+ * @see ConnectorDefinition
+ * @see ConnectorStatus
+ */
 @Getter
 public class Connector {
 

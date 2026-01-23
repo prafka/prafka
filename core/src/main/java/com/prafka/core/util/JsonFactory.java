@@ -7,6 +7,13 @@ import com.google.gson.reflect.TypeToken;
 
 import java.util.Map;
 
+/**
+ * Factory providing pre-configured JSON serialization instances.
+ *
+ * <p>Provides shared Gson instances (default and pretty-printing) configured with
+ * {@link GsonOptionalAdapter} support, null serialization, and disabled HTML escaping.
+ * Also provides a default Jackson {@link ObjectMapper} instance.
+ */
 public class JsonFactory {
 
     public static final TypeToken<Map<String, String>> MAP_STING_STRING_TYPE = new TypeToken<>() {

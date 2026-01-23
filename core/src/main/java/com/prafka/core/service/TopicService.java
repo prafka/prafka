@@ -13,6 +13,14 @@ import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
+/**
+ * Service for managing Kafka topics.
+ *
+ * <p>Provides operations to list, create, empty (delete all records), and delete topics.
+ * Includes methods to retrieve topic details with partition information and offset ranges.
+ *
+ * @see Topic
+ */
 @Named
 @Singleton
 public class TopicService extends AbstractService {

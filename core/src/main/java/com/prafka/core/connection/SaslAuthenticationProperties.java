@@ -8,6 +8,27 @@ import org.apache.kafka.common.config.SaslConfigs;
 
 import java.util.Properties;
 
+/**
+ * Configuration properties for SASL authentication with Kafka.
+ *
+ * <p>This class encapsulates the SASL authentication settings including the security protocol,
+ * mechanism, and credentials. It supports PLAIN, SCRAM-SHA-256, and SCRAM-SHA-512 mechanisms.
+ *
+ * <p>Use the Lombok-generated builder to create instances:
+ * <pre>{@code
+ * SaslAuthenticationProperties props = SaslAuthenticationProperties.builder()
+ *     .securityProtocol(SaslSecurityProtocol.SASL_SSL)
+ *     .mechanism(SaslMechanism.SCRAM_SHA_512)
+ *     .username("user")
+ *     .password("secret".toCharArray())
+ *     .build();
+ * }</pre>
+ *
+ * @see KafkaProperties
+ * @see SaslMechanism
+ * @see SaslSecurityProtocol
+ * @see AuthenticationMethod#SASL
+ */
 @Builder
 public class SaslAuthenticationProperties {
 

@@ -18,6 +18,15 @@ import java.lang.reflect.Modifier;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Service for generating random Kafka record data for testing purposes.
+ *
+ * <p>Uses the Datafaker library to generate realistic random JSON payloads
+ * and supports random generation for various serialization types including
+ * strings, numeric types, UUIDs, and JSON.
+ *
+ * @see SerdeType
+ */
 @Named
 @Singleton
 public class RecordRandomService {

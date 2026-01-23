@@ -18,6 +18,14 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 
+/**
+ * Service for managing Kafka Connect connectors.
+ *
+ * <p>Provides operations to list, create, update, delete, pause, resume, and restart
+ * connectors and their tasks. Also supports configuration validation.
+ *
+ * @see Connector
+ */
 @Named
 @Singleton
 public class ConnectService extends AbstractService {

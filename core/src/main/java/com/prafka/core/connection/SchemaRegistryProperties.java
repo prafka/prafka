@@ -9,6 +9,28 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
+/**
+ * Configuration properties for connecting to Confluent Schema Registry.
+ *
+ * <p>This class encapsulates the connection settings for Schema Registry, including the
+ * URL, authentication method (Basic, Token, or SSL), and caching configuration.
+ *
+ * <p>Use the Lombok-generated builder to create instances:
+ * <pre>{@code
+ * SchemaRegistryProperties props = SchemaRegistryProperties.builder()
+ *     .url("http://localhost:8081")
+ *     .authenticationMethod(AuthenticationMethod.BASIC)
+ *     .basicAuthenticationProperties(BasicAuthenticationProperties.builder()
+ *         .username("user")
+ *         .password("secret".toCharArray()))
+ *     .build();
+ * }</pre>
+ *
+ * @see AuthenticationMethod
+ * @see BasicAuthenticationProperties
+ * @see TokenAuthenticationProperties
+ * @see SslAuthenticationProperties
+ */
 @Builder
 public class SchemaRegistryProperties {
 

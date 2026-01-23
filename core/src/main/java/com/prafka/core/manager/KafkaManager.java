@@ -10,6 +10,16 @@ import org.sourcelab.kafka.connect.apiclient.KafkaConnectClient;
 import java.util.Map;
 import java.util.Properties;
 
+/**
+ * Central factory interface for creating and managing Kafka client instances.
+ *
+ * <p>Provides methods to obtain Admin clients, Consumers, Producers, Schema Registry clients,
+ * and Kafka Connect clients. Implementations typically cache client instances per cluster
+ * to avoid recreating connections on each request.
+ *
+ * @see AbstractKafkaManager
+ * @see Closeable
+ */
 public interface KafkaManager extends Closeable {
 
     Admin createAdminClient(Properties properties);

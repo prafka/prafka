@@ -13,6 +13,15 @@ import java.util.concurrent.CompletableFuture;
 
 import static org.apache.kafka.common.resource.ResourcePattern.WILDCARD_RESOURCE;
 
+/**
+ * Service for managing Kafka Access Control Lists (ACLs).
+ *
+ * <p>Provides operations to list, create, and delete ACLs for various Kafka resources
+ * including topics, consumer groups, cluster, transactional IDs, and delegation tokens.
+ * Also includes helper methods to create ACLs for typical consumer and producer use cases.
+ *
+ * @see Acl
+ */
 @Named
 @Singleton
 public class AclService extends AbstractService {

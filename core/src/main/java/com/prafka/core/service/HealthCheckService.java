@@ -9,6 +9,12 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+/**
+ * Service for performing health checks on Kafka ecosystem components.
+ *
+ * <p>Checks the availability of the Kafka cluster, Schema Registry, and Kafka Connect
+ * instances. Each check includes a timeout to prevent blocking on unresponsive services.
+ */
 @Named
 @Singleton
 public class HealthCheckService extends AbstractService {

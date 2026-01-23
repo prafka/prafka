@@ -34,6 +34,16 @@ import java.util.Optional;
 
 import static com.prafka.core.util.JsonFactory.gsonDefault;
 
+/**
+ * Service for deserializing Kafka record keys and values.
+ *
+ * <p>Supports automatic deserialization using Schema Registry (Avro, JSON Schema, Protobuf),
+ * internal Kafka topics (__consumer_offsets, __transaction_state), and standard deserializers.
+ * Falls back to UTF-8 string or hex dump for unknown formats.
+ *
+ * @see SerdeType
+ * @see SerDeManager
+ */
 @Named
 @Singleton
 public class RecordDeserializationService extends AbstractService {

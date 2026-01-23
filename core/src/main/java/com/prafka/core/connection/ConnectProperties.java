@@ -7,6 +7,24 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Properties;
 
+/**
+ * Configuration properties for connecting to Kafka Connect REST API.
+ *
+ * <p>This class encapsulates the connection settings for Kafka Connect, including the
+ * REST API URL, authentication method, and optional Basic or SSL authentication properties.
+ *
+ * <p>Use the Lombok-generated builder to create instances:
+ * <pre>{@code
+ * ConnectProperties props = ConnectProperties.builder()
+ *     .url("http://localhost:8083")
+ *     .authenticationMethod(AuthenticationMethod.NONE)
+ *     .build();
+ * }</pre>
+ *
+ * @see AuthenticationMethod
+ * @see BasicAuthenticationProperties
+ * @see SslAuthenticationProperties
+ */
 @Builder
 public class ConnectProperties {
 

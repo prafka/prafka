@@ -13,6 +13,14 @@ import org.sourcelab.kafka.connect.apiclient.KafkaConnectClient;
 import java.util.Map;
 import java.util.Properties;
 
+/**
+ * Abstract base class for all Kafka-related services.
+ *
+ * <p>Provides convenient access methods to Kafka clients (Admin, Consumer, Producer),
+ * Schema Registry client, and Kafka Connect clients through the injected {@link KafkaManager}.
+ *
+ * @see KafkaManager
+ */
 public abstract class AbstractService {
 
     protected final Logger log = LoggerFactory.getLogger(getClass());

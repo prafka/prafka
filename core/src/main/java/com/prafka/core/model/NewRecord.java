@@ -8,6 +8,16 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Data transfer object for producing a new record to a Kafka topic.
+ *
+ * <p>Contains all the information needed to publish a message including the key, value,
+ * headers, serialization types, optional partition and timestamp, compression settings,
+ * and producer acknowledgment configuration.
+ *
+ * @see Record
+ * @see SerdeType
+ */
 @Getter
 @Setter
 public class NewRecord {

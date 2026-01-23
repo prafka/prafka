@@ -12,6 +12,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Service for managing Kafka client quotas.
+ *
+ * <p>Provides operations to list, create, update, and delete quotas for users,
+ * client IDs, and IP addresses. Supports quota types including producer rate,
+ * consumer rate, connection rate, controller mutation rate, and request percentage.
+ *
+ * @see Quota
+ */
 @Named
 @Singleton
 public class QuotaService extends AbstractService {

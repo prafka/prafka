@@ -3,6 +3,14 @@ package com.prafka.core.model;
 import lombok.Getter;
 import org.apache.kafka.clients.admin.ConfigEntry;
 
+/**
+ * Represents a configuration entry for a Kafka resource (broker, topic, etc.).
+ *
+ * <p>Contains the configuration name, current value, default value, data type,
+ * source of the configuration, and documentation.
+ *
+ * @see ConfigEntry
+ */
 @Getter
 public class Config {
 

@@ -23,6 +23,17 @@ import java.util.UUID;
 
 import static com.prafka.core.util.JsonFactory.objectMapperDefault;
 
+/**
+ * Service for serializing Kafka record keys and values.
+ *
+ * <p>Supports serialization using Schema Registry (Avro, JSON Schema, Protobuf)
+ * and standard Kafka serializers (String, numeric types, UUID). Converts
+ * {@link NewRecord} instances into {@link ProducerRecord} with serialized payloads.
+ *
+ * @see NewRecord
+ * @see SerdeType
+ * @see SerDeManager
+ */
 @Named
 @Singleton
 public class RecordSerializationService extends AbstractService {

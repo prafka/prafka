@@ -18,6 +18,15 @@ import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/**
+ * Service for managing Kafka consumer groups.
+ *
+ * <p>Provides operations to list, create, and delete consumer groups, as well as
+ * manage consumer group offsets. Supports various offset reset strategies including
+ * earliest, latest, specific offset, shift, and timestamp-based.
+ *
+ * @see ConsumerGroup
+ */
 @Named
 @Singleton
 public class ConsumerGroupService extends AbstractService {

@@ -6,6 +6,12 @@ import org.apache.commons.lang3.time.DurationFormatUtils;
 
 import static org.apache.commons.lang3.StringUtils.normalizeSpace;
 
+/**
+ * Utility class for formatting values into human-readable strings.
+ *
+ * <p>Provides methods to format Kafka configuration values, durations in milliseconds,
+ * and byte sizes into user-friendly representations.
+ */
 public class FormatUtils {
 
     public static String prettyConfigValue(String name, String value) {

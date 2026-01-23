@@ -29,6 +29,21 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Manages serializers and deserializers for Kafka message keys and values.
+ *
+ * <p>Provides factory methods for obtaining serializers and deserializers for various formats:
+ * <ul>
+ *   <li>Schema Registry-based: Avro, JSON Schema, and Protobuf</li>
+ *   <li>Standard Kafka serdes: String, Bytes, Short, Integer, Long, Float, Double, UUID</li>
+ *   <li>Embedded Avro (self-contained Avro files with schema)</li>
+ * </ul>
+ *
+ * <p>Deserializers are cached per cluster and key/value type to optimize performance.
+ * Serializers are created fresh for each request as they may hold mutable state.
+ *
+ * @see SerdeType
+ */
 @Named
 @Singleton
 public class SerDeManager extends AbstractService implements Closeable {

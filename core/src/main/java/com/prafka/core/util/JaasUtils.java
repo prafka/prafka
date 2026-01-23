@@ -1,5 +1,13 @@
 package com.prafka.core.util;
 
+/**
+ * Utility class for generating JAAS configuration strings for Kafka SASL authentication.
+ *
+ * <p>Provides methods to create JAAS configuration strings for PLAIN and SCRAM
+ * authentication mechanisms used with Kafka's SASL security.
+ *
+ * @see com.prafka.core.connection.SaslAuthenticationProperties
+ */
 public class JaasUtils {
 
     private static final String SASL_JAAS_PLAIN_TEMPLATE = "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"%s\" password=\"%s\";";

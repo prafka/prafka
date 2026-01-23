@@ -20,6 +20,14 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * Service for managing Kafka configuration entries.
+ *
+ * <p>Provides operations to retrieve and modify configurations for brokers and topics.
+ * Includes default topic configuration values and documentation.
+ *
+ * @see Config
+ */
 @Named
 @Singleton
 public class ConfigService extends AbstractService {

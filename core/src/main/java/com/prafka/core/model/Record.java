@@ -13,6 +13,16 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Represents a Kafka record (message) with its key, value, headers, and metadata.
+ *
+ * <p>This class wraps consumed records and provides both raw and formatted versions
+ * of the key and value. JSON content is automatically detected and can be retrieved
+ * in compressed (single-line) or pretty-printed format.
+ *
+ * @see ConsumerRecord
+ * @see NewRecord
+ */
 @Getter
 public class Record {
 

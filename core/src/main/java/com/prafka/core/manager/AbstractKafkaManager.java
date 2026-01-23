@@ -28,6 +28,18 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
+/**
+ * Abstract base implementation of {@link KafkaManager} with client caching.
+ *
+ * <p>Provides default implementations for creating and caching Admin clients, Consumers,
+ * Producers, Schema Registry clients, and Kafka Connect clients. Subclasses must implement
+ * the abstract methods to provide cluster-specific configuration properties.
+ *
+ * <p>All clients are cached per cluster ID to avoid unnecessary reconnections. The cache
+ * can be cleared globally via {@link #close()} or per-cluster via {@link #close(String)}.
+ *
+ * @see KafkaManager
+ */
 public abstract class AbstractKafkaManager implements KafkaManager {
 
     private final Map<String, Admin> adminClients = new ConcurrentHashMap<>();

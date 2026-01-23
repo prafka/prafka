@@ -7,6 +7,14 @@ import jakarta.inject.Singleton;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Service for retrieving Kafka broker information.
+ *
+ * <p>Provides operations to list all brokers in the cluster and retrieve
+ * individual broker details including controller status.
+ *
+ * @see Broker
+ */
 @Named
 @Singleton
 public class BrokerService extends AbstractService {

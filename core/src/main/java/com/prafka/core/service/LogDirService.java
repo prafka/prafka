@@ -11,6 +11,14 @@ import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
+/**
+ * Service for retrieving Kafka log directory information.
+ *
+ * <p>Provides operations to query log directory details including size and offset lag
+ * for partition replicas, organized by broker or by topic.
+ *
+ * @see LogDir
+ */
 @Named
 @Singleton
 public class LogDirService extends AbstractService {

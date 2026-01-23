@@ -3,6 +3,11 @@ package com.prafka.core.util;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * Utility class for collection operations.
+ *
+ * <p>Provides helper methods for creating collections with convenient syntax.
+ */
 public class CollectionUtils {
 
     public static Map<Object, Object> mapOf(Object... input) {

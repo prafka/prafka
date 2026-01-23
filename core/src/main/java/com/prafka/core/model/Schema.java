@@ -10,6 +10,16 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
 
+/**
+ * Represents a schema registered in Confluent Schema Registry.
+ *
+ * <p>Supports Avro, JSON Schema, and Protobuf schema types. Contains schema metadata
+ * including the subject, version history, compatibility level, raw schema definition,
+ * and parsed field information.
+ *
+ * @see SchemaMetadata
+ * @see ParsedSchema
+ */
 @Getter
 public class Schema {
 

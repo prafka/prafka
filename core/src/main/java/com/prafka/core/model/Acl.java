@@ -7,6 +7,14 @@ import org.apache.kafka.common.acl.AclPermissionType;
 import org.apache.kafka.common.resource.PatternType;
 import org.apache.kafka.common.resource.ResourceType;
 
+/**
+ * Represents a Kafka Access Control List (ACL) entry.
+ *
+ * <p>An ACL defines permissions for a principal (user or client) to perform specific operations
+ * on Kafka resources such as topics, consumer groups, or the cluster itself.
+ *
+ * @see AclBinding
+ */
 @Getter
 public class Acl {
 
