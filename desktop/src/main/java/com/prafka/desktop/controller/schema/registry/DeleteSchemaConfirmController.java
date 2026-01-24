@@ -15,6 +15,12 @@ import java.util.Optional;
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 import static com.prafka.desktop.util.JavaFXUtils.getStage;
 
+/**
+ * Controller for the schema deletion confirmation dialog.
+ *
+ * <p>Supports deleting entire subjects or specific versions with an option
+ * for permanent (hard) deletion versus soft deletion.
+ */
 public class DeleteSchemaConfirmController extends AbstractController {
 
     public Label labelTitle;

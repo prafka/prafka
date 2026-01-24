@@ -19,6 +19,12 @@ import org.reactfx.Subscription;
 import static com.prafka.core.util.JsonFactory.*;
 import static com.prafka.core.util.StreamUtils.tryOrEmpty;
 
+/**
+ * Controller for the connector configuration editing dialog.
+ *
+ * <p>Provides a JSON code editor with syntax highlighting for modifying
+ * connector configuration properties.
+ */
 public class EditConnectorController extends AbstractController {
 
     public CodeArea codeArea;

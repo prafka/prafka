@@ -5,6 +5,12 @@ import jakarta.inject.Singleton;
 
 import java.util.ResourceBundle;
 
+/**
+ * Provides internationalization support for the application.
+ *
+ * <p>Loads and manages resource bundles for the current locale,
+ * providing localized strings throughout the UI.
+ */
 @Singleton
 public class I18nService {
 

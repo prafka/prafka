@@ -18,6 +18,12 @@ import java.util.function.Supplier;
 
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 
+/**
+ * Loader for topic summary cards displayed on the cluster overview dashboard.
+ *
+ * <p>Asynchronously fetches topic count, partition count, record count,
+ * and total storage size to populate summary cards in the UI.
+ */
 @Singleton
 public class TopicSummaryLoader extends AbstractSummaryLoader {
 

@@ -21,6 +21,12 @@ import static com.prafka.desktop.util.FormatUtils.prettyJson;
 import static com.prafka.desktop.util.JavaFXUtils.getStage;
 import static com.prafka.desktop.util.JavaFXUtils.setCodeAreaAutoIntend;
 
+/**
+ * Controller for the schema editing dialog.
+ *
+ * <p>Provides a code editor with syntax highlighting for modifying schema definitions.
+ * Includes compatibility check before saving to ensure schema evolution rules are followed.
+ */
 public class EditSchemaController extends AbstractController {
 
     public CodeArea codeArea;

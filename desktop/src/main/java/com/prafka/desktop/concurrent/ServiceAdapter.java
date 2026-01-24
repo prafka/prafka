@@ -8,6 +8,12 @@ import java.util.function.Consumer;
 
 import static com.prafka.desktop.service.ExecutorHolder.taskExecutor;
 
+/**
+ * JavaFX Service adapter for running background tasks with fluent callback configuration.
+ *
+ * <p>Simplifies creating background services with success and error handlers,
+ * using the shared task executor pool.
+ */
 public class ServiceAdapter<T> extends Service<T> {
 
     private final FailableSupplier<T, Exception> supplier;

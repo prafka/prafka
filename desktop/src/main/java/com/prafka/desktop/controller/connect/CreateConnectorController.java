@@ -27,6 +27,13 @@ import java.util.HashMap;
 import static com.prafka.core.util.JsonFactory.*;
 import static com.prafka.core.util.StreamUtils.tryOrEmpty;
 
+/**
+ * Controller for the connector creation dialog.
+ *
+ * <p>Provides form fields for connector name, target Connect cluster selection,
+ * and JSON configuration editor with syntax highlighting. Supports configuration
+ * validation before creation.
+ */
 public class CreateConnectorController extends AbstractController {
 
     public Pane paneContent;

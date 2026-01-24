@@ -28,6 +28,12 @@ import java.util.function.Consumer;
 import static com.prafka.desktop.concurrent.ServiceAdapter.task;
 import static com.prafka.desktop.util.JavaFXUtils.label;
 
+/**
+ * Controller for managing consume filter templates for a topic.
+ *
+ * <p>Allows saving, applying, and deleting filter templates including
+ * setting a default template. Supports import/export of templates to JSON files.
+ */
 public class FilterTemplatesController extends AbstractController {
 
     public Pane paneContent;

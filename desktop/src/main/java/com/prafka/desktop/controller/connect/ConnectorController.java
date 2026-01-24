@@ -17,6 +17,13 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import static com.prafka.core.util.StreamUtils.tryIgnore;
 
+/**
+ * Controller for the individual connector detail view with tabbed content.
+ *
+ * <p>Displays connector worker, plugin, type, state, and task counts. Provides tabs
+ * for viewing tasks and configuration. Supports pause, resume, restart, delete operations
+ * and bulk task restart options.
+ */
 public class ConnectorController extends AbstractController {
 
     public Label labelH1;

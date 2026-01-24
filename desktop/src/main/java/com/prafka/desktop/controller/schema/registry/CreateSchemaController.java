@@ -26,6 +26,13 @@ import static com.prafka.desktop.util.JavaFXUtils.*;
 import static org.apache.commons.lang3.BooleanUtils.isNotTrue;
 import static org.apache.commons.lang3.BooleanUtils.isTrue;
 
+/**
+ * Controller for the schema creation dialog.
+ *
+ * <p>Supports creating Avro, JSON Schema, and Protobuf schemas with code editor
+ * featuring syntax highlighting. Provides naming strategies for topic-based or
+ * custom subject names with code templates for each schema type.
+ */
 public class CreateSchemaController extends AbstractController {
 
     public Pane paneContent;

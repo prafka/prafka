@@ -4,6 +4,12 @@ import jakarta.inject.Singleton;
 import javafx.scene.Node;
 import org.apache.commons.lang3.event.EventListenerSupport;
 
+/**
+ * Event bus for dashboard navigation and content updates.
+ *
+ * <p>Provides a publish-subscribe mechanism for dashboard-related events,
+ * allowing components to communicate without direct coupling.
+ */
 @Singleton
 public class EventService {
 

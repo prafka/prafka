@@ -11,6 +11,12 @@ import javafx.util.StringConverter;
 
 import static com.prafka.desktop.util.JavaFXUtils.getStage;
 
+/**
+ * Abstract base controller for schema tab views (source and structure).
+ *
+ * <p>Provides common functionality for version selection, schema editing,
+ * and version deletion with callback support for refreshing parent views.
+ */
 abstract class AbstractSchemaTabController extends AbstractController {
 
     @FXML

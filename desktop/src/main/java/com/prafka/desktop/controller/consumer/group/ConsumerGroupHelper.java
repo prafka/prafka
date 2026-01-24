@@ -4,6 +4,12 @@ import com.prafka.desktop.controller.AbstractController;
 import jakarta.inject.Singleton;
 import org.apache.kafka.common.GroupState;
 
+/**
+ * Helper class providing UI-related utilities for consumer group state display.
+ *
+ * <p>Provides state descriptions, CSS style classes for state badges, and logic
+ * for determining whether a group is editable (empty or dead state).
+ */
 @Singleton
 public class ConsumerGroupHelper extends AbstractController {
 

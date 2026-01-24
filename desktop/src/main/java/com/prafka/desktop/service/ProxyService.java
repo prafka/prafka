@@ -10,6 +10,12 @@ import java.net.PasswordAuthentication;
 import static com.prafka.core.util.StreamUtils.tryIgnore;
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
+/**
+ * Configures system-wide HTTP/HTTPS proxy settings.
+ *
+ * <p>Applies proxy configuration from user settings to Java system properties,
+ * including support for authenticated proxies.
+ */
 @Singleton
 public class ProxyService {
 

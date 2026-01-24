@@ -47,6 +47,12 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
+/**
+ * Central manager for view navigation and FXML loading in the application.
+ *
+ * <p>Provides methods to show and load all application views, manages view caching
+ * for performance, and handles stage creation with proper theming and internationalization.
+ */
 @Singleton
 public class ViewManager {
 

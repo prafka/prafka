@@ -21,6 +21,12 @@ import java.util.concurrent.CompletionStage;
 import static com.prafka.desktop.util.JavaFXUtils.getStage;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+/**
+ * Controller for the topic configuration tab showing all config properties.
+ *
+ * <p>Displays topic configuration properties in a searchable table with options
+ * to filter by overrides only. Supports editing property values and raw view export.
+ */
 public class TopicTabConfigurationController extends AbstractTableController<List<Config>, String, ConfigModelView> {
 
     public CheckBox checkBoxShowOverridesOnly;

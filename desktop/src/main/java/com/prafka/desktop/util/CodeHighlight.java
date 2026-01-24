@@ -14,6 +14,12 @@ import java.util.Optional;
 import java.util.function.Supplier;
 import java.util.regex.Pattern;
 
+/**
+ * Provides syntax highlighting for code displayed in CodeArea components.
+ *
+ * <p>Supports JSON, Avro, key-value pairs, and provides async highlighting
+ * with debouncing for improved performance.
+ */
 public class CodeHighlight {
 
     private static final Pattern JSON_PATTERN = Pattern.compile("(?<KEY>\"([^\"\\\\]|\\\\.)*\"\\s*:)|(?<BRACE>([{}]))|(?<BRACKET>([\\[\\]]))|(?<STRING>\"([^\"\\\\]|\\\\.)*\")|(?<NUMBER>-?[0-9]+(.[0-9]+)?(([eE])?[0-9]+)?)|(?<NULL>(?i:null))|(?<BOOLEAN>(?i:true|false))");

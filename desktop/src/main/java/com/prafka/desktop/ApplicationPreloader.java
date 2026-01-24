@@ -11,6 +11,12 @@ import javafx.stage.StageStyle;
 
 import java.util.Optional;
 
+/**
+ * JavaFX preloader that displays a splash screen during application startup.
+ *
+ * <p>Shows a branded splash image while the main application initializes,
+ * providing visual feedback to the user during the loading process.
+ */
 public class ApplicationPreloader extends Preloader {
 
     @Override

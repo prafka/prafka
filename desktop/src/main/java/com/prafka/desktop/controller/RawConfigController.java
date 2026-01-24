@@ -14,6 +14,12 @@ import java.util.stream.Collectors;
 
 import static com.prafka.desktop.concurrent.ServiceAdapter.task;
 
+/**
+ * Controller for displaying raw configuration in a code editor.
+ *
+ * <p>Shows Kafka configurations in key-value format with syntax highlighting
+ * and copy-to-clipboard functionality.
+ */
 public class RawConfigController extends AbstractController {
 
     public CodeArea codeArea;

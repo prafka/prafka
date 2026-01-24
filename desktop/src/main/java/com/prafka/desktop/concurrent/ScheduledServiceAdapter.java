@@ -11,6 +11,12 @@ import java.util.function.Consumer;
 
 import static com.prafka.desktop.service.ExecutorHolder.taskExecutor;
 
+/**
+ * JavaFX ScheduledService adapter for periodic background task execution.
+ *
+ * <p>Supports configurable delay, period, and optional maximum execution count
+ * with fluent API for callbacks.
+ */
 public class ScheduledServiceAdapter<T> extends ScheduledService<T> {
 
     private final FailableSupplier<T, Exception> supplier;

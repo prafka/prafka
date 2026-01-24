@@ -2,6 +2,11 @@ package com.prafka.desktop.model;
 
 import lombok.Getter;
 
+/**
+ * Enumeration of available application color themes.
+ *
+ * <p>Defines light and dark theme options with their corresponding codes and display names.
+ */
 @Getter
 public enum ThemeModel {
 

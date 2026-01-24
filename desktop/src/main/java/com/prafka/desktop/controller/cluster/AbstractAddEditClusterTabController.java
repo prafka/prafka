@@ -14,6 +14,12 @@ import org.apache.kafka.common.config.SslConfigs;
 import static com.prafka.desktop.util.JavaFXUtils.getStage;
 import static com.prafka.desktop.util.JavaFXUtils.label;
 
+/**
+ * Base class for cluster configuration tab controllers.
+ *
+ * <p>Provides common SSL authentication field management and file chooser
+ * functionality for keystore and truststore selection.
+ */
 abstract class AbstractAddEditClusterTabController extends AbstractController {
 
     public TextField textFieldKeystoreLocation;

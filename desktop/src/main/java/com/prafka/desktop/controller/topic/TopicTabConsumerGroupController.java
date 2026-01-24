@@ -20,6 +20,12 @@ import java.util.concurrent.CompletionStage;
 import static com.prafka.desktop.util.JavaFXUtils.labelWithTooltip;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+/**
+ * Controller for the topic consumer groups tab showing groups consuming from the topic.
+ *
+ * <p>Displays consumer groups with their state, member count, and lag for
+ * the specific topic in a searchable table view.
+ */
 public class TopicTabConsumerGroupController extends AbstractTableController<List<ConsumerGroup>, String, TopicTabConsumerGroupController.ConsumerGroupModelView> {
 
     private final ConsumerGroupService consumerGroupService;

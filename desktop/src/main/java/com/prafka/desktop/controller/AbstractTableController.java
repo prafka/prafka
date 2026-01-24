@@ -20,6 +20,12 @@ import java.util.concurrent.CompletionStage;
 
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 
+/**
+ * Base class for controllers displaying data in TableView components.
+ *
+ * <p>Provides common functionality for table data loading, filtering, sorting,
+ * checkbox selection management, and async data operations.
+ */
 public abstract class AbstractTableController<Source, Key, Model extends AbstractTableModelView> extends AbstractController {
 
     @FXML

@@ -20,6 +20,12 @@ import java.util.concurrent.CompletionStage;
 import static com.prafka.desktop.util.JavaFXUtils.getStage;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+/**
+ * Controller for the broker configuration tab showing all config properties.
+ *
+ * <p>Displays broker configuration properties in a searchable table with
+ * property name, value, data type, and source information. Supports raw view export.
+ */
 public class BrokerTabConfigurationController extends AbstractTableController<List<Config>, String, ConfigModelView> {
 
     public Pane paneFilterBlock;

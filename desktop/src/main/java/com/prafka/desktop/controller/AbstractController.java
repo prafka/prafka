@@ -21,6 +21,12 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+/**
+ * Base class for all JavaFX controllers in the application.
+ *
+ * <p>Provides common services via dependency injection, lifecycle methods for UI
+ * and data initialization, and utilities for error handling and task management.
+ */
 public abstract class AbstractController implements Initializable, Closeable {
 
     protected final Logger log = LoggerFactory.getLogger(getClass());

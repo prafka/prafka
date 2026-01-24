@@ -14,6 +14,12 @@ import java.util.concurrent.ArrayBlockingQueue;
 
 import static com.prafka.core.util.CollectionUtils.mapOf;
 
+/**
+ * Collects and sends application analytics data to the backend server.
+ *
+ * <p>Manages a queue of analytics events and periodically batches them
+ * for transmission. Respects user privacy settings for analytics collection.
+ */
 @Singleton
 public class AnalyticsService {
 

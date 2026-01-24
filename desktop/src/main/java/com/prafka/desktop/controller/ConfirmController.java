@@ -9,6 +9,12 @@ import javafx.scene.layout.Pane;
 
 import java.util.function.Consumer;
 
+/**
+ * Controller for confirmation dialog windows.
+ *
+ * <p>Displays a confirmation prompt with customizable title, content, and button text,
+ * handling success and error callbacks for the confirm action.
+ */
 public class ConfirmController extends AbstractController {
 
     public Label labelTitle;

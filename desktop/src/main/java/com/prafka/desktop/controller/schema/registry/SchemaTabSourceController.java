@@ -13,6 +13,12 @@ import static com.prafka.desktop.util.CodeHighlight.*;
 import static com.prafka.desktop.util.FormatUtils.prettyAvro;
 import static com.prafka.desktop.util.FormatUtils.prettyJson;
 
+/**
+ * Controller for the schema source code tab.
+ *
+ * <p>Displays the raw schema definition with syntax highlighting based on schema type
+ * (Avro, JSON, Protobuf). Supports version selection to view historical schemas.
+ */
 public class SchemaTabSourceController extends AbstractSchemaTabController {
 
     public CodeArea codeArea;

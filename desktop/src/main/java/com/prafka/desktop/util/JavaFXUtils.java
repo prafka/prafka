@@ -41,6 +41,12 @@ import static org.apache.commons.lang3.BooleanUtils.isTrue;
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.apache.commons.lang3.StringUtils.upperCase;
 
+/**
+ * Utility methods for common JavaFX UI operations.
+ *
+ * <p>Provides helpers for labels, tooltips, table columns, clipboard operations,
+ * keyboard event handlers, and other frequently used UI patterns.
+ */
 public class JavaFXUtils {
 
     public static final Comparator<Label> LABEL_COMPARATOR = Comparator.comparing(Labeled::getText);

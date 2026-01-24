@@ -17,6 +17,12 @@ import org.slf4j.LoggerFactory;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
 
+/**
+ * Main JavaFX application class.
+ *
+ * <p>Initializes the Guice dependency injection framework, sets up the view manager,
+ * and manages the application lifecycle including startup, runtime, and shutdown.
+ */
 public class Application extends javafx.application.Application {
 
     private static final Logger log = LoggerFactory.getLogger(Application.class);

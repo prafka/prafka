@@ -19,6 +19,12 @@ import org.controlsfx.control.CheckComboBox;
 
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 
+/**
+ * Controller for the consumer group creation dialog.
+ *
+ * <p>Provides form fields for group ID, offset strategy (earliest/latest),
+ * and topic selection. Creates the group with initial offsets on selected topics.
+ */
 public class CreateConsumerGroupController extends AbstractController {
 
     public Pane paneContent;

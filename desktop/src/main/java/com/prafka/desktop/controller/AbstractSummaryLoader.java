@@ -8,6 +8,12 @@ import javafx.scene.layout.Pane;
 
 import static com.prafka.desktop.util.JavaFXUtils.setPaneLoader;
 
+/**
+ * Base class for controllers that display summary information cards.
+ *
+ * <p>Provides helper methods for creating styled summary cards with titles
+ * and content panes, including loading indicators.
+ */
 public abstract class AbstractSummaryLoader extends AbstractController {
 
     protected Node card(String title, Pane contentPane) {

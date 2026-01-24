@@ -15,6 +15,12 @@ import org.fxmisc.richtext.LineNumberFactory;
 
 import static com.prafka.core.util.JsonFactory.gsonPretty;
 
+/**
+ * Controller for the connector configuration tab showing the current config.
+ *
+ * <p>Displays the connector configuration as formatted JSON with syntax highlighting.
+ * Provides an edit button to open the configuration editor dialog.
+ */
 public class ConnectorTabConfigurationController extends AbstractController {
 
     public Button buttonEdit;

@@ -7,6 +7,12 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.Properties;
 
+/**
+ * Builds connection properties for Kafka, Schema Registry, and Kafka Connect clients.
+ *
+ * <p>Transforms cluster model configuration into the appropriate connection properties
+ * including authentication settings (SASL, SSL, Basic, Token).
+ */
 @Singleton
 public class ConnectionPropertiesService {
 

@@ -5,6 +5,12 @@ import lombok.Getter;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Enumeration of available timestamp display formats.
+ *
+ * <p>Provides predefined date/time format patterns with corresponding formatters
+ * for consistent timestamp rendering throughout the application.
+ */
 @Getter
 public enum TimestampFormatModel {
 

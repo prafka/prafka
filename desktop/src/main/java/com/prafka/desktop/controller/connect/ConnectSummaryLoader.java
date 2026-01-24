@@ -15,6 +15,12 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+/**
+ * Loader for Kafka Connect summary cards displayed on the cluster overview dashboard.
+ *
+ * <p>Asynchronously fetches connector and task counts (total, running, failed)
+ * to populate summary cards in the UI.
+ */
 @Singleton
 public class ConnectSummaryLoader extends AbstractSummaryLoader {
 

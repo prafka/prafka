@@ -19,6 +19,12 @@ import java.util.Collection;
 import java.util.List;
 import java.util.function.Supplier;
 
+/**
+ * Manages Kafka cluster configurations including CRUD operations and import/export.
+ *
+ * <p>Provides functionality to save, delete, and retrieve cluster configurations
+ * from encrypted storage, as well as import and export cluster data in JSON format.
+ */
 @Singleton
 public class ClusterService {
 

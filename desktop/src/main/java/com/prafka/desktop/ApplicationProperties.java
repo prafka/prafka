@@ -13,6 +13,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+/**
+ * Manages application configuration properties and user data directories.
+ *
+ * <p>Loads build-time properties and runtime configuration, including application
+ * name, version, URLs, and user-specific paths for data and logs.
+ */
 public class ApplicationProperties {
 
     private static final Logger log = LoggerFactory.getLogger(ApplicationProperties.class);

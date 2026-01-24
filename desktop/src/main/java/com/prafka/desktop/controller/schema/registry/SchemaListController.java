@@ -34,6 +34,13 @@ import static com.prafka.desktop.util.FormatUtils.prettyEnum;
 import static com.prafka.desktop.util.JavaFXUtils.*;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+/**
+ * Controller for displaying the list of schema subjects in a searchable table.
+ *
+ * <p>Shows subject name, record name, schema type (Avro/JSON/Protobuf), compatibility level,
+ * and version with summary cards for registry overview. Uses rate limiting for fetching
+ * schema details to avoid overloading the registry.
+ */
 public class SchemaListController extends AbstractTableController<Collection<String>, String, SchemaListController.SchemaModelView> {
 
     public Button buttonCreateSchema;

@@ -28,6 +28,12 @@ import static com.prafka.desktop.util.JavaFXUtils.label;
 import static com.prafka.desktop.util.ValidateUtils.getAdditionalProperties;
 import static com.prafka.desktop.util.ValidateUtils.validateAdditionalProperties;
 
+/**
+ * Controller for the Kafka Connect configuration tab in the add/edit cluster dialog.
+ *
+ * <p>Supports configuration of multiple Connect instances with name, URL,
+ * authentication settings, and connection testing.
+ */
 public class AddEditClusterTabKafkaConnectController extends AbstractAddEditClusterTabController {
 
     public Pane paneConnectList;

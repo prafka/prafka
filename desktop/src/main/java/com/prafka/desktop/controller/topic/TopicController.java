@@ -14,6 +14,13 @@ import javafx.scene.control.TabPane;
 
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 
+/**
+ * Controller for the individual topic detail view with tabbed content.
+ *
+ * <p>Displays topic name and provides tabs for consuming messages, producing messages,
+ * viewing partitions, configuration, consumer groups, and ACLs. Supports topic deletion
+ * and emptying operations.
+ */
 public class TopicController extends AbstractController {
 
     public Label labelH1;

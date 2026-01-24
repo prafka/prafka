@@ -29,6 +29,13 @@ import java.util.function.Supplier;
 import static com.prafka.core.util.JsonFactory.gsonPretty;
 import static com.prafka.desktop.concurrent.ServiceAdapter.task;
 
+/**
+ * Controller for the individual record detail dialog.
+ *
+ * <p>Displays the full key and value content with syntax highlighting,
+ * headers, and metadata (timestamp, partition, offset, sizes). Supports
+ * copying to clipboard and exporting to JSON file.
+ */
 public class TopicRecordController extends AbstractController {
 
     public TabPane tabPane;

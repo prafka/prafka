@@ -22,6 +22,13 @@ import java.util.function.Consumer;
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 import static com.prafka.desktop.concurrent.ServiceAdapter.task;
 
+/**
+ * Controller for adding or editing JavaScript filter expressions.
+ *
+ * <p>Provides a code editor with syntax highlighting for writing JavaScript
+ * filter expressions used to filter consumed messages. Validates expression
+ * syntax before applying.
+ */
 public class AddEditJsFilterController extends AbstractController {
 
     public CodeArea codeArea;

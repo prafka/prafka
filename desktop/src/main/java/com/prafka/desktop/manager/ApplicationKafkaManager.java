@@ -12,6 +12,12 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import java.util.List;
 import java.util.Properties;
 
+/**
+ * Implementation of the Kafka manager.
+ *
+ * <p>Provides connection properties for Kafka clients, Schema Registry, and Kafka Connect
+ * based on the currently active cluster session.
+ */
 @Singleton
 public class ApplicationKafkaManager extends AbstractKafkaManager {
 

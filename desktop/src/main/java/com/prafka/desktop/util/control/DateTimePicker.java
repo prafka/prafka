@@ -12,6 +12,12 @@ import java.time.format.DateTimeFormatter;
 
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+/**
+ * Extended DatePicker control that includes time selection.
+ *
+ * <p>Allows users to select both date and time values with configurable format,
+ * returning timestamps in UTC.
+ */
 public class DateTimePicker extends DatePicker {
 
     private final ObjectProperty<LocalDateTime> dateTimeValue = new SimpleObjectProperty<>();

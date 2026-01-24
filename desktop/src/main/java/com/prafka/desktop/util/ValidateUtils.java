@@ -8,6 +8,12 @@ import org.apache.commons.lang3.Strings;
 import java.util.LinkedHashMap;
 import java.util.stream.Collectors;
 
+/**
+ * Validation utilities for user input in the application.
+ *
+ * <p>Provides methods for validating and parsing additional properties text fields
+ * and URL format validation.
+ */
 public class ValidateUtils {
 
     public static void validateAdditionalProperties(TextArea textArea) {

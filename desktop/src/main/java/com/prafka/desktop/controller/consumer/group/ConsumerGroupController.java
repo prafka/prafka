@@ -18,6 +18,13 @@ import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 import static com.prafka.desktop.util.FormatUtils.prettyEnum;
 import static com.prafka.desktop.util.JavaFXUtils.labelWithTooltip;
 
+/**
+ * Controller for the individual consumer group detail view with tabbed content.
+ *
+ * <p>Displays group state, member count, coordinator, topic/partition counts, and overall lag.
+ * Provides tabs for viewing members, topics, and ACLs. Supports offset reset and group deletion
+ * when the group is in an editable state (empty or dead).
+ */
 public class ConsumerGroupController extends AbstractController {
 
     public Label labelH1;

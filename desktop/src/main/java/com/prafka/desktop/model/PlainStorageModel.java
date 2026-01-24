@@ -6,6 +6,12 @@ import lombok.Setter;
 
 import java.util.*;
 
+/**
+ * Model for unencrypted persistent storage containing non-sensitive settings.
+ *
+ * <p>Stores user preferences (locale, theme, timestamp format), onboarding status,
+ * analytics consent, and window size preferences.
+ */
 @Getter
 @Setter
 public class PlainStorageModel {

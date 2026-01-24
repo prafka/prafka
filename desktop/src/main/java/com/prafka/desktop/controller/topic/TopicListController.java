@@ -32,6 +32,13 @@ import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 import static com.prafka.desktop.util.JavaFXUtils.getStage;
 import static com.prafka.desktop.util.JavaFXUtils.setNumberLabelNA;
 
+/**
+ * Controller for displaying the list of Kafka topics in a searchable table.
+ *
+ * <p>Shows topic name, partitions, replicas, record count, and size with options
+ * to filter internal and stream topics. Supports bulk topic operations like empty
+ * and delete, as well as topic creation.
+ */
 public class TopicListController extends AbstractTableController<Set<String>, String, TopicListController.TopicModelView> {
 
     public Button buttonEmptyTopics;

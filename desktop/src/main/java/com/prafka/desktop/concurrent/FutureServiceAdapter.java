@@ -9,6 +9,12 @@ import java.util.concurrent.CompletionStage;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Consumer;
 
+/**
+ * JavaFX Service adapter for wrapping CompletionStage-based async operations.
+ *
+ * <p>Provides fluent API for success/error handlers and integrates cancellation
+ * with both the service and the underlying future.
+ */
 public class FutureServiceAdapter<T> extends Service<T> {
 
     private final FailableSupplier<CompletionStage<T>, Exception> supplier;

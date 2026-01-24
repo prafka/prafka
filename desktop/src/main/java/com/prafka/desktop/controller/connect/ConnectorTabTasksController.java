@@ -29,6 +29,12 @@ import java.util.concurrent.atomic.AtomicReference;
 import static com.prafka.core.util.StreamUtils.tryIgnore;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+/**
+ * Controller for the connector tasks tab showing individual task status.
+ *
+ * <p>Displays task ID, state, worker assignment, and error trace in a searchable table.
+ * Supports individual task restart operations with state refresh.
+ */
 public class ConnectorTabTasksController extends AbstractTableController<Connector, Integer, ConnectorTabTasksController.TaskModelView> {
 
     private final ConnectService connectService;

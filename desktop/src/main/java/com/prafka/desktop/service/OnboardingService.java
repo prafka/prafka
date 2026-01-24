@@ -3,6 +3,12 @@ package com.prafka.desktop.service;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 
+/**
+ * Manages the application onboarding process for first-time users.
+ *
+ * <p>Tracks whether onboarding has been completed and provides methods
+ * to mark the onboarding as finished.
+ */
 @Singleton
 public class OnboardingService {
 

@@ -19,6 +19,13 @@ import java.util.Map;
 
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 
+/**
+ * Controller for the topic creation dialog.
+ *
+ * <p>Provides form fields for topic name, partition count, replication factor,
+ * cleanup policy selection, and advanced configuration options. Validates input
+ * and creates the topic asynchronously.
+ */
 public class CreateTopicController extends AbstractController {
 
     public TextField textFieldName;

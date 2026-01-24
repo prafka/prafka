@@ -28,6 +28,12 @@ import java.util.concurrent.CompletionStage;
 
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+/**
+ * Controller for the consumer group members tab showing active consumers.
+ *
+ * <p>Displays members with client ID, host, partition count, and lag in an expandable table.
+ * Each member row expands to show assigned topic-partitions with offset and lag details.
+ */
 public class ConsumerGroupTabMembersController extends AbstractTableController<ConsumerGroup, String, ConsumerGroupTabMembersController.MemberModelView> {
 
     private final ConsumerGroupService consumerGroupService;

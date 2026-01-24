@@ -12,6 +12,12 @@ import org.apache.commons.lang3.Strings;
 
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 
+/**
+ * Controller for the help and about dialog.
+ *
+ * <p>Displays application version, links to documentation and website,
+ * and checks for available updates.
+ */
 public class HelpController extends AbstractController {
 
     public Label labelCurrentVersion;

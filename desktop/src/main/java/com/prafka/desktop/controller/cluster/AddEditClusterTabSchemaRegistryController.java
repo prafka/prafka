@@ -20,6 +20,12 @@ import org.apache.commons.lang3.function.FailableSupplier;
 
 import java.util.Optional;
 
+/**
+ * Controller for the Schema Registry configuration tab in the add/edit cluster dialog.
+ *
+ * <p>Manages Schema Registry URL and authentication settings (Basic, Token, SSL)
+ * with connection testing capability.
+ */
 public class AddEditClusterTabSchemaRegistryController extends AbstractAddEditClusterTabController {
 
     public TextField textFieldUrl;

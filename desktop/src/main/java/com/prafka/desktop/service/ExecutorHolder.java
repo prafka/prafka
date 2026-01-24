@@ -5,6 +5,12 @@ import com.prafka.core.util.ExecutorUtils;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * Holds shared executor services for background task execution.
+ *
+ * <p>Provides dedicated thread pools for code highlighting and general
+ * background tasks, with proper shutdown handling.
+ */
 public class ExecutorHolder {
 
     public static final ExecutorService codeHighlightExecutor = Executors.newSingleThreadExecutor();

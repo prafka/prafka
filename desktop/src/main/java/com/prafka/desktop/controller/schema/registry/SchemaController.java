@@ -17,6 +17,13 @@ import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 import static com.prafka.desktop.util.FormatUtils.prettyEnum;
 import static com.prafka.desktop.util.JavaFXUtils.*;
 
+/**
+ * Controller for the individual schema subject detail view with tabbed content.
+ *
+ * <p>Displays current version, total versions, schema type, and compatibility level.
+ * Provides tabs for viewing source code and field structure, with options to edit
+ * compatibility and delete the schema.
+ */
 public class SchemaController extends AbstractController {
 
     public Label labelH1;

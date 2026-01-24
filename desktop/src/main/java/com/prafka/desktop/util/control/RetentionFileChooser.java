@@ -7,6 +7,12 @@ import org.apache.commons.lang3.SystemUtils;
 import java.io.File;
 import java.util.concurrent.atomic.AtomicReference;
 
+/**
+ * FileChooser wrapper that remembers the last used directory.
+ *
+ * <p>Persists the previous directory selection across file operations
+ * for improved user experience.
+ */
 public class RetentionFileChooser {
 
     private static final AtomicReference<File> prevDirectory = new AtomicReference<>(SystemUtils.getUserHome());

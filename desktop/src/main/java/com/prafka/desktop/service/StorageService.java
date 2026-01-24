@@ -25,6 +25,12 @@ import java.security.cert.CertificateException;
 
 import static com.prafka.core.util.JsonFactory.gsonDefault;
 
+/**
+ * Manages persistent storage for application data using encrypted and plain storage files.
+ *
+ * <p>Handles loading and saving of both plain-text settings and encrypted data
+ * (such as cluster credentials) using a master password-protected keystore.
+ */
 @Singleton
 public class StorageService {
 

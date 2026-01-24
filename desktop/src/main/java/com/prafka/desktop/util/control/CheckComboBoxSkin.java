@@ -15,7 +15,7 @@ import org.controlsfx.control.IndexedCheckModel;
 import static org.controlsfx.control.CheckComboBox.COMBO_BOX_ROWS_TO_MEASURE_WIDTH_KEY;
 
 /**
- * Копия impl.org.controlsfx.skin.CheckComboBoxSkin с переопределённым методом getTextString()
+ * Copy of impl.org.controlsfx.skin.CheckComboBoxSkin with an overridden method getTextString()
  */
 public class CheckComboBoxSkin<T> extends SkinBase<CheckComboBox<T>> {
 

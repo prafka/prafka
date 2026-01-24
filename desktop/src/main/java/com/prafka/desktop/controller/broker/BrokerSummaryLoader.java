@@ -17,6 +17,12 @@ import java.util.function.Supplier;
 
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 
+/**
+ * Loader for broker summary cards displayed on the cluster overview dashboard.
+ *
+ * <p>Asynchronously fetches broker count, controller status, and Kafka version
+ * information to populate summary cards in the UI.
+ */
 @Singleton
 public class BrokerSummaryLoader extends AbstractSummaryLoader {
 

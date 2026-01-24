@@ -29,6 +29,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 
+/**
+ * Main dashboard controller managing the primary application window.
+ *
+ * <p>Handles navigation between different views (topics, brokers, schemas, etc.),
+ * cluster selection, connection health monitoring, and sidebar menu interactions.
+ */
 public class DashboardController extends AbstractController {
 
     public BorderPane borderPane;

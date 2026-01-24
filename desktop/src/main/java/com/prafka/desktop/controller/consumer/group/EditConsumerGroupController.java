@@ -25,6 +25,13 @@ import java.util.stream.Collectors;
 import static com.prafka.core.util.StreamUtils.tryOrEmpty;
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 
+/**
+ * Controller for the consumer group offset reset dialog.
+ *
+ * <p>Allows resetting offsets for specific topics/partitions using various strategies:
+ * earliest, latest, specific offset, shift by value, datetime, or timestamp.
+ * Displays a preview of current and new offsets before applying changes.
+ */
 public class EditConsumerGroupController extends AbstractController {
 
     public GridPane paneTopicPartition;

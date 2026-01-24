@@ -7,6 +7,12 @@ import jakarta.inject.Singleton;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
 
+/**
+ * Maintains the current user session state including master password and active cluster.
+ *
+ * <p>Stores session credentials in memory and tracks the currently selected
+ * Kafka cluster for operations.
+ */
 @Singleton
 public class SessionService {
 

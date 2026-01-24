@@ -31,6 +31,12 @@ import static com.prafka.desktop.concurrent.ServiceAdapter.task;
 import static com.prafka.desktop.util.JavaFXUtils.getStage;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+/**
+ * Controller for displaying and managing the list of configured Kafka clusters.
+ *
+ * <p>Provides functionality to view, add, edit, delete, import, and export
+ * cluster configurations in a searchable table view.
+ */
 public class ClusterListController extends AbstractTableController<List<ClusterModel>, String, ClusterListController.ClusterModelView> {
 
     public Button buttonImport;

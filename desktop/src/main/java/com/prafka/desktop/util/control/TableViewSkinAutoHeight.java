@@ -4,6 +4,12 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.skin.TableViewSkin;
 import org.apache.commons.lang3.reflect.MethodUtils;
 
+/**
+ * Custom TableView skin that automatically sizes based on visible row count.
+ *
+ * <p>Calculates preferred height to display up to the specified maximum
+ * number of rows without scrolling.
+ */
 public class TableViewSkinAutoHeight<T> extends TableViewSkin<T> {
 
     private final int maxVisibleRows;

@@ -32,6 +32,13 @@ import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 import static com.prafka.desktop.concurrent.ServiceAdapter.task;
 import static com.prafka.desktop.util.JavaFXUtils.numberLabelText;
 
+/**
+ * Controller for the topic produce tab enabling message publishing.
+ *
+ * <p>Provides editors for key and value with format selection (String, JSON, Schema Registry, etc.),
+ * custom headers, partition selection, compression, and acknowledgment settings. Displays
+ * recently produced messages with their metadata.
+ */
 public class TopicTabProduceController extends AbstractController {
 
     public ComboBox<SerdeType> comboBoxKeyFormat;

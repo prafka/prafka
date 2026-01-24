@@ -23,6 +23,12 @@ import java.util.concurrent.CompletionStage;
 
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+/**
+ * Controller for the broker log directories tab showing partition storage details.
+ *
+ * <p>Displays log directory information including path, topic, partition,
+ * size, and offset lag for each partition stored on the broker.
+ */
 public class BrokerTabLogDirsController extends AbstractTableController<Map<TopicPartition, List<LogDir>>, String, BrokerTabLogDirsController.LogDirModelView> {
 
     public Pane paneFilterBlock;

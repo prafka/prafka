@@ -12,6 +12,12 @@ import static com.prafka.desktop.util.JavaFXUtils.label;
 import static com.prafka.desktop.util.JavaFXUtils.tooltip;
 import static org.apache.commons.lang3.StringUtils.*;
 
+/**
+ * Formatting utilities for display values in the UI.
+ *
+ * <p>Provides methods for formatting durations, file sizes, enum values,
+ * JSON/Avro content, and ACL principals for human-readable display.
+ */
 public class FormatUtils {
 
     public static final String NA = "N/A";

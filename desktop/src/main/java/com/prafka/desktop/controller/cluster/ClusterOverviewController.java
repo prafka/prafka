@@ -20,6 +20,12 @@ import java.util.List;
 import static com.prafka.desktop.util.JavaFXUtils.getStage;
 import static com.prafka.desktop.util.JavaFXUtils.label;
 
+/**
+ * Controller for the cluster overview dashboard displaying summary information.
+ *
+ * <p>Shows summary cards for brokers, topics, consumer groups, schemas, ACLs,
+ * quotas, and connectors for the currently selected cluster.
+ */
 public class ClusterOverviewController extends AbstractController {
 
     public Pane paneContent;

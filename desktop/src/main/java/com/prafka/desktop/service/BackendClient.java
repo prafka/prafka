@@ -17,6 +17,12 @@ import java.util.concurrent.CompletableFuture;
 import static com.prafka.core.util.JsonFactory.MAP_STING_STRING_TYPE;
 import static com.prafka.core.util.JsonFactory.gsonDefault;
 
+/**
+ * HTTP client for communication with the backend API.
+ *
+ * <p>Provides methods for retrieving application version information
+ * and submitting analytics data.
+ */
 @Singleton
 public class BackendClient {
 

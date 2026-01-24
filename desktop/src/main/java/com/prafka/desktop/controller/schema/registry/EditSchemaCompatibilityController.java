@@ -19,6 +19,12 @@ import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 import static com.prafka.desktop.util.FormatUtils.prettyEnum;
 import static com.prafka.desktop.util.JavaFXUtils.getStage;
 
+/**
+ * Controller for the schema compatibility level editing dialog.
+ *
+ * <p>Displays radio button options for all compatibility levels (BACKWARD, FORWARD,
+ * FULL variants, and NONE) allowing users to change the subject's compatibility setting.
+ */
 public class EditSchemaCompatibilityController extends AbstractController {
 
     public GridPane paneCompatibility;

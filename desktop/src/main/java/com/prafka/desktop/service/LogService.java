@@ -9,6 +9,12 @@ import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Configures and manages application logging using Logback.
+ *
+ * <p>Initializes logging configuration, manages log levels,
+ * and provides access to the log directory.
+ */
 @Singleton
 public class LogService {
 

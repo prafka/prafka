@@ -3,6 +3,12 @@ package com.prafka.desktop.service;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 
+/**
+ * Manages the master password used to protect encrypted application data.
+ *
+ * <p>Provides methods to save and verify the master password using secure
+ * hashing algorithms.
+ */
 @Singleton
 public class MasterPasswordService {
 

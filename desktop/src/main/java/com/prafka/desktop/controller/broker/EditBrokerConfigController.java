@@ -8,6 +8,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+/**
+ * Controller for the dialog displaying broker configuration property details.
+ *
+ * <p>Shows read-only information about a specific broker configuration property
+ * including its name, documentation, default value, and current value.
+ */
 public class EditBrokerConfigController extends AbstractController {
 
     public Label labelInfoTitle;

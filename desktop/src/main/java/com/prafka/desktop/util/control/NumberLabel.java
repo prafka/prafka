@@ -7,6 +7,12 @@ import lombok.Getter;
 import java.util.Comparator;
 import java.util.Objects;
 
+/**
+ * Label that wraps a numeric value for sortable table columns.
+ *
+ * <p>Stores the source number separately from the displayed text,
+ * enabling proper numeric sorting in tables.
+ */
 @Getter
 public class NumberLabel extends Label {
 

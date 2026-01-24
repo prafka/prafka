@@ -6,6 +6,11 @@ import lombok.Setter;
 import java.time.Instant;
 import java.util.UUID;
 
+/**
+ * Base class for models that require unique identification and timestamp tracking.
+ *
+ * <p>Provides auto-generated UUID and creation/update timestamps for all extending models.
+ */
 @Getter
 @Setter
 public abstract class AbstractTrackedModel {

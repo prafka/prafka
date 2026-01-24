@@ -5,6 +5,12 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.Node;
 import javafx.scene.control.CheckBox;
 
+/**
+ * Base class for table row view models with selection and action support.
+ *
+ * <p>Provides checkbox for row selection and actions property for row-level
+ * context menus in TableView components.
+ */
 public abstract class AbstractTableModelView {
 
     private final CheckBox checkBoxInternal = JavaFXUtils.cellCheckBock();

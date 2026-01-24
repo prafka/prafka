@@ -8,6 +8,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 
+/**
+ * Controller for the individual broker detail view with tabbed content.
+ *
+ * <p>Displays broker address and provides tabs for viewing configuration
+ * properties and log directory information for a specific broker.
+ */
 public class BrokerController extends AbstractController {
 
     public Label labelH1;

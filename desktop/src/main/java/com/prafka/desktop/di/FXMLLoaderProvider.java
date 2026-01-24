@@ -5,6 +5,12 @@ import com.google.inject.Provider;
 import jakarta.inject.Inject;
 import javafx.fxml.FXMLLoader;
 
+/**
+ * Guice provider that creates {@link FXMLLoader} instances with Guice-based controller factory.
+ *
+ * <p>Integrates JavaFX FXML loading with Guice dependency injection by configuring
+ * each loader to use Guice for controller instantiation.
+ */
 public class FXMLLoaderProvider implements Provider<FXMLLoader> {
 
     private final Injector injector;

@@ -13,6 +13,12 @@ import java.util.Properties;
 
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
+/**
+ * Model representing a complete Kafka cluster configuration.
+ *
+ * <p>Contains connection settings for Kafka brokers, Schema Registry, and Kafka Connect,
+ * including authentication configurations (SASL, SSL, Basic, Token).
+ */
 @Getter
 @Setter
 public class ClusterModel extends AbstractTrackedModel {

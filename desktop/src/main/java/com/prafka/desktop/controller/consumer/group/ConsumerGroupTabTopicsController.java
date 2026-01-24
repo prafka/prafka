@@ -29,6 +29,13 @@ import java.util.stream.Collectors;
 
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+/**
+ * Controller for the consumer group topics tab showing subscribed topics.
+ *
+ * <p>Displays topics with partition counts and lag in an expandable table.
+ * Each topic row expands to show partition-level details including assigned member,
+ * offset, and lag.
+ */
 public class ConsumerGroupTabTopicsController extends AbstractTableController<ConsumerGroup, String, ConsumerGroupTabTopicsController.TopicModelView> {
 
     private final ConsumerGroupService consumerGroupService;

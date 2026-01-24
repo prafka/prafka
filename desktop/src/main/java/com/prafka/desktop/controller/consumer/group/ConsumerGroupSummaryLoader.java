@@ -16,6 +16,12 @@ import java.util.function.Supplier;
 
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 
+/**
+ * Loader for consumer group summary cards displayed on the cluster overview dashboard.
+ *
+ * <p>Asynchronously fetches group counts by state (total, stable, rebalancing, empty, dead)
+ * to populate summary cards in the UI.
+ */
 @Singleton
 public class ConsumerGroupSummaryLoader extends AbstractSummaryLoader {
 

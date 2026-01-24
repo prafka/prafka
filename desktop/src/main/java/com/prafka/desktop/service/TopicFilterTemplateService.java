@@ -20,6 +20,12 @@ import java.time.Instant;
 import java.util.*;
 import java.util.function.Supplier;
 
+/**
+ * Manages topic filter templates for message consumption.
+ *
+ * <p>Provides CRUD operations for filter templates associated with specific topics,
+ * including import/export functionality and default template management.
+ */
 @Singleton
 public class TopicFilterTemplateService {
 

@@ -8,6 +8,12 @@ import com.prafka.desktop.service.OpenLinkService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 
+/**
+ * Guice dependency injection module for the application.
+ *
+ * <p>Configures bindings for core application components including FXML loaders,
+ * Kafka manager, application properties, and services.
+ */
 public class GuiceModule extends AbstractModule {
 
     private final Application application;

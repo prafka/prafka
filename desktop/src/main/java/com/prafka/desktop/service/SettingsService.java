@@ -7,6 +7,12 @@ import jakarta.inject.Singleton;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * Manages user preferences and application settings.
+ *
+ * <p>Provides access to locale, theme, timestamp format, proxy configuration,
+ * logging settings, and window size preferences.
+ */
 @Singleton
 public class SettingsService {
 

@@ -11,6 +11,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Manages application theming including stylesheets and icons.
+ *
+ * <p>Provides theme-aware CSS stylesheets for JavaFX scenes and caches
+ * theme-specific icons for efficient reuse.
+ */
 @Singleton
 public class ThemeService {
 

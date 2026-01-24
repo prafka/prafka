@@ -14,6 +14,12 @@ import org.apache.commons.lang3.StringUtils;
 
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 
+/**
+ * Controller for the topic configuration editing dialog.
+ *
+ * <p>Displays configuration property details including documentation, default value,
+ * and current value. Allows setting a new value or resetting to default.
+ */
 public class EditTopicConfigController extends AbstractController {
 
     public Label labelInfoTitle;

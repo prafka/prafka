@@ -8,6 +8,12 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.fxmisc.richtext.CodeArea;
 import org.fxmisc.richtext.LineNumberFactory;
 
+/**
+ * Controller for displaying detailed error information.
+ *
+ * <p>Shows exception stack traces or error messages in a code area
+ * with line numbers and copy-to-clipboard functionality.
+ */
 public class ErrorDetailsController extends AbstractController {
 
     public CodeArea codeArea;

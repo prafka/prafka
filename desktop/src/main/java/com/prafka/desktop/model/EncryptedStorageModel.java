@@ -9,6 +9,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Model for encrypted persistent storage containing sensitive application data.
+ *
+ * <p>Stores cluster configurations, proxy settings, and topic filter templates
+ * that require encryption with the master password.
+ */
 @Getter
 @Setter
 public class EncryptedStorageModel {

@@ -3,6 +3,11 @@ package com.prafka.desktop.model;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Model for storing JavaFX stage (window) settings.
+ *
+ * <p>Persists window dimensions to restore user-preferred sizes between sessions.
+ */
 @Getter
 @Setter
 public class StageModel {

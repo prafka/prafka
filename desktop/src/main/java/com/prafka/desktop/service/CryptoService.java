@@ -12,6 +12,12 @@ import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.security.*;
 
+/**
+ * Provides cryptographic operations for password hashing and data encryption.
+ *
+ * <p>Supports BCrypt password hashing, SHA-512 hashing, Base64 encoding/decoding,
+ * and AES encryption/decryption for secure data storage.
+ */
 @Singleton
 public class CryptoService {
 

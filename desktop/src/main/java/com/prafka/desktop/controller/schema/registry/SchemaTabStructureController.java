@@ -16,6 +16,12 @@ import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 import static com.prafka.desktop.util.JavaFXUtils.*;
 import static org.apache.commons.collections.CollectionUtils.isNotEmpty;
 
+/**
+ * Controller for the schema structure tab showing parsed fields.
+ *
+ * <p>Displays schema fields in a hierarchical tree table view with field names
+ * and types. Supports version selection to view historical schema structures.
+ */
 public class SchemaTabStructureController extends AbstractSchemaTabController {
 
     public TreeTableView<StructureModelView> treeTableView;

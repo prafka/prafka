@@ -31,6 +31,12 @@ import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 import static com.prafka.desktop.util.JavaFXUtils.getStage;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+/**
+ * Controller for displaying the list of Kafka brokers in a searchable table.
+ *
+ * <p>Shows broker ID, rack, address, partition count, and storage size with
+ * summary cards for overall cluster broker information.
+ */
 public class BrokerListController extends AbstractTableController<List<Broker>, Integer, BrokerListController.BrokerModelView> {
 
     public Pane paneSummaryBlock;

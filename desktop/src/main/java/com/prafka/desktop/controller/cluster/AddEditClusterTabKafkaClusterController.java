@@ -25,6 +25,12 @@ import static com.prafka.desktop.util.JavaFXUtils.requestFocus;
 import static com.prafka.desktop.util.ValidateUtils.getAdditionalProperties;
 import static com.prafka.desktop.util.ValidateUtils.validateAdditionalProperties;
 
+/**
+ * Controller for the Kafka cluster configuration tab in the add/edit cluster dialog.
+ *
+ * <p>Handles cluster name, bootstrap servers, authentication method selection (SASL/SSL),
+ * and connection testing for the Kafka broker configuration.
+ */
 public class AddEditClusterTabKafkaClusterController extends AbstractAddEditClusterTabController {
 
     public TextField textFieldName;

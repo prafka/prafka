@@ -53,6 +53,13 @@ import static com.prafka.desktop.concurrent.ServiceAdapter.task;
 import static com.prafka.desktop.util.JavaFXUtils.numberLabelText;
 import static com.prafka.desktop.util.JavaFXUtils.setPaneLoader;
 
+/**
+ * Controller for the topic consume tab enabling message browsing.
+ *
+ * <p>Provides filters for offset, datetime, partitions, and message format (key/value serde).
+ * Supports JavaScript-based filtering expressions, filter templates, and message export.
+ * Displays consumed messages in a sortable, searchable table with real-time consumption.
+ */
 public class TopicTabConsumeController extends AbstractController {
 
     public Label labelCardRecordCountTitle;

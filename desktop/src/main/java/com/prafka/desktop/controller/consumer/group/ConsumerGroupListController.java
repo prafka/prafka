@@ -31,6 +31,13 @@ import static com.prafka.desktop.util.JavaFXUtils.getStage;
 import static com.prafka.desktop.util.JavaFXUtils.labelWithTooltip;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+/**
+ * Controller for displaying the list of consumer groups in a searchable table.
+ *
+ * <p>Shows group ID, state, member count, topic count, and overall lag with
+ * summary cards for state distribution. Supports group creation, offset reset,
+ * and group deletion actions.
+ */
 public class ConsumerGroupListController extends AbstractTableController<List<ConsumerGroup.GroupIdState>, String, ConsumerGroupListController.ConsumerGroupModelView> {
 
     public Button buttonCreateConsumerGroup;

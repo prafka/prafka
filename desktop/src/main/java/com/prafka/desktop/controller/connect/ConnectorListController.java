@@ -32,6 +32,13 @@ import static com.prafka.desktop.util.JavaFXUtils.labelWithTooltip;
 import static com.prafka.desktop.util.JavaFXUtils.setNumberLabelLoader;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+/**
+ * Controller for displaying the list of Kafka Connect connectors in a searchable table.
+ *
+ * <p>Shows connector name, connect cluster, plugin, type (sink/source), state, topics,
+ * and task counts. Supports filtering by connect cluster and connector operations
+ * (pause, resume, restart, delete). Uses rate limiting for fetching connector details.
+ */
 public class ConnectorListController extends AbstractTableController<List<Connector.Name>, Connector.Name, ConnectorListController.ConnectorModelView> {
 
     public Button buttonCreateConnector;

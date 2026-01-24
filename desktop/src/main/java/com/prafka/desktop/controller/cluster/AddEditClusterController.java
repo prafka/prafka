@@ -22,6 +22,12 @@ import static com.prafka.desktop.concurrent.ServiceAdapter.task;
 import static com.prafka.desktop.util.JavaFXUtils.buttonToggleGroupListener;
 import static com.prafka.desktop.util.JavaFXUtils.getStage;
 
+/**
+ * Controller for the add/edit cluster dialog.
+ *
+ * <p>Manages tabbed configuration for Kafka cluster, Schema Registry, and Kafka Connect
+ * settings with connection testing and validation.
+ */
 public class AddEditClusterController extends AbstractController {
 
     public SegmentedButton segmentedButtonTab;

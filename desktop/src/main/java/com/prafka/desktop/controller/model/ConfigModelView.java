@@ -7,6 +7,12 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.control.Label;
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * View model for displaying Kafka configuration entries in tables.
+ *
+ * <p>Formats configuration values with human-readable durations and sizes,
+ * and applies styling based on configuration source type.
+ */
 public class ConfigModelView extends AbstractTableModelView {
 
     private final Config source;

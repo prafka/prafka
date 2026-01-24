@@ -19,6 +19,12 @@ import java.util.Locale;
 
 import static com.prafka.core.util.StreamUtils.tryOrEmpty;
 
+/**
+ * Controller for the application settings dialog.
+ *
+ * <p>Manages user preferences including language, theme, timestamp format,
+ * proxy configuration, and logging settings.
+ */
 public class SettingsController extends AbstractController {
 
     public Pane paneContent;

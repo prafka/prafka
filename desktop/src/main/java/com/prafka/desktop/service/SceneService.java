@@ -23,6 +23,12 @@ import org.apache.commons.lang3.BooleanUtils;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * Provides utility methods for common UI operations and notifications.
+ *
+ * <p>Creates styled labels, error messages, snackbar notifications,
+ * and action menu buttons for use throughout the application.
+ */
 @Singleton
 public class SceneService {
 

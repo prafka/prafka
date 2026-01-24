@@ -26,6 +26,12 @@ import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 import static com.prafka.desktop.util.JavaFXUtils.setNumberLabelLoader;
 import static com.prafka.desktop.util.JavaFXUtils.setNumberLabelNA;
 
+/**
+ * Controller for the topic partitions tab showing partition details.
+ *
+ * <p>Displays partition information including record count, size, offset range,
+ * and replica assignments with leader indication for each partition.
+ */
 public class TopicTabPartitionsController extends AbstractTableController<Topic, Integer, TopicTabPartitionsController.PartitionModelView> {
 
     private final TopicService topicService;

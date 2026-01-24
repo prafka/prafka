@@ -17,6 +17,12 @@ import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 import static com.prafka.desktop.util.FormatUtils.prettyEnum;
 import static com.prafka.desktop.util.JavaFXUtils.*;
 
+/**
+ * Loader for schema registry summary cards displayed on the cluster overview dashboard.
+ *
+ * <p>Asynchronously fetches subject count, soft-deleted count, global compatibility level,
+ * and registry mode to populate summary cards in the UI.
+ */
 @Singleton
 public class SchemaSummaryLoader extends AbstractSummaryLoader {
 
