@@ -15,6 +15,13 @@ import org.controlsfx.control.SegmentedButton;
 
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 
+/**
+ * Controller for creating consumer ACLs with simplified interface.
+ *
+ * <p>Configures ACLs for Kafka consumers by selecting topics and consumer groups
+ * (exact or prefixed patterns), along with principal and host. Automatically grants
+ * the necessary READ permissions for consumer operations.
+ */
 public class CreateAclForConsumerController extends AbstractController {
 
     public Pane paneContent;

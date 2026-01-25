@@ -14,6 +14,13 @@ import org.apache.commons.lang3.Strings;
 
 import static com.prafka.desktop.concurrent.ServiceAdapter.task;
 
+/**
+ * Controller for creating the master password during initial onboarding.
+ *
+ * <p>Guides new users through creating their master password, which encrypts cluster
+ * credentials and sensitive data. Validates password strength and confirmation matching,
+ * then completes the onboarding process and optionally prompts to add the first cluster.
+ */
 public class OnboardingCreateMasterPasswordController extends AbstractController {
 
     public PasswordField passwordFieldNewMasterPassword;

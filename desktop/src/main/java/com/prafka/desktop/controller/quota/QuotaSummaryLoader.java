@@ -17,6 +17,13 @@ import java.util.function.Supplier;
 
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 
+/**
+ * Loader for quota summary cards displayed on the quota list view.
+ *
+ * <p>Asynchronously fetches quota statistics including total quota count and counts
+ * for different quota types (producer rate, consumer rate, connection rate, etc.)
+ * to populate summary cards in the UI.
+ */
 @Singleton
 public class QuotaSummaryLoader extends AbstractSummaryLoader {
 

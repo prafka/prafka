@@ -14,6 +14,13 @@ import org.apache.commons.lang3.Strings;
 
 import static com.prafka.desktop.concurrent.ServiceAdapter.task;
 
+/**
+ * Controller for resetting the master password.
+ *
+ * <p>Allows users to reset their master password when they've forgotten the current one.
+ * This operation deletes all existing encrypted storage (cluster credentials) and creates
+ * a new master password. Users must re-add their clusters after reset.
+ */
 public class ResetMasterPasswordController extends AbstractController {
 
     public PasswordField passwordFieldNewMasterPassword;

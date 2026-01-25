@@ -17,6 +17,13 @@ import java.util.Locale;
 
 import static com.prafka.desktop.concurrent.ServiceAdapter.task;
 
+/**
+ * Controller for the initial settings configuration during onboarding.
+ *
+ * <p>Allows new users to configure language, theme, and analytics collection preferences
+ * before proceeding to create their master password. This is the first step in the
+ * onboarding flow for new installations.
+ */
 public class OnboardingSettingsController extends AbstractController {
 
     public Pane paneContent;

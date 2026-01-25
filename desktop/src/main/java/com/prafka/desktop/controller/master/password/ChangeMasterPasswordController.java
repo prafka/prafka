@@ -14,6 +14,13 @@ import org.apache.commons.lang3.Strings;
 
 import static com.prafka.desktop.concurrent.ServiceAdapter.task;
 
+/**
+ * Controller for changing the master password.
+ *
+ * <p>Allows users to change their master password by verifying the current password,
+ * accepting a new password, and re-encrypting the storage with the new password.
+ * Ensures password validation (minimum length) and confirmation matching.
+ */
 public class ChangeMasterPasswordController extends AbstractController {
 
     public PasswordField passwordFieldCurrentMasterPassword;

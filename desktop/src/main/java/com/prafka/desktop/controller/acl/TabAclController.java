@@ -22,6 +22,13 @@ import java.util.concurrent.CompletionStage;
 
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+/**
+ * Controller for displaying ACLs in a table within a topic or consumer group detail tab.
+ *
+ * <p>Shows ACLs filtered by a specific resource type and pattern, displaying principal,
+ * resource, permission, operation, and host. Used as an embedded tab controller to show
+ * ACLs related to a specific Kafka resource.
+ */
 public class TabAclController extends AbstractTableController<List<Acl>, String, TabAclController.AclModelView> {
 
     private final AclService aclService;

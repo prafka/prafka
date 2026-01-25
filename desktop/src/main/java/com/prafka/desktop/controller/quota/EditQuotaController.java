@@ -15,6 +15,13 @@ import java.util.Objects;
 import static com.prafka.core.util.StreamUtils.tryOrEmpty;
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 
+/**
+ * Controller for editing existing Kafka quotas.
+ *
+ * <p>Allows modification of quota values for existing quota configurations.
+ * Displays read-only entity type, entity name, and config type, with an
+ * editable field for the quota value.
+ */
 public class EditQuotaController extends AbstractController {
 
     public TextField textFieldEntityType;

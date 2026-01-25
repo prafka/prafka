@@ -15,6 +15,13 @@ import org.controlsfx.control.SegmentedButton;
 
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 
+/**
+ * Controller for creating producer ACLs with simplified interface.
+ *
+ * <p>Configures ACLs for Kafka producers by selecting topics (exact or prefixed patterns),
+ * optional transactional ID, and idempotent producer settings. Automatically grants
+ * the necessary WRITE permissions for producer operations.
+ */
 public class CreateAclForProducerController extends AbstractController {
 
     public Pane paneContent;

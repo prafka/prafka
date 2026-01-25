@@ -28,6 +28,13 @@ import static com.prafka.desktop.util.JavaFXUtils.getRemainTableWidth;
 import static com.prafka.desktop.util.JavaFXUtils.getStage;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+/**
+ * Controller for the quota list view displaying all cluster quotas.
+ *
+ * <p>Shows a comprehensive table of Kafka quotas including entity type, entity name,
+ * config type, and quota value. Provides filtering, summary cards showing quota
+ * statistics, and actions to create, edit, or delete quotas.
+ */
 public class QuotaListController extends AbstractTableController<List<Quota>, String, QuotaListController.QuotaModelView> {
 
     public Button buttonCreateQuota;

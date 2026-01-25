@@ -15,6 +15,12 @@ import java.util.function.Supplier;
 
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 
+/**
+ * Loader for ACL summary cards displayed on the ACL list view.
+ *
+ * <p>Asynchronously fetches ACL count and principal count to populate summary
+ * cards showing overview statistics about cluster ACLs.
+ */
 @Singleton
 public class AclSummaryLoader extends AbstractSummaryLoader {
 

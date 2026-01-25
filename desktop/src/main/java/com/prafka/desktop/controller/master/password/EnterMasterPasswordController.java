@@ -13,6 +13,13 @@ import org.apache.commons.lang3.StringUtils;
 
 import static com.prafka.desktop.concurrent.ServiceAdapter.task;
 
+/**
+ * Controller for the master password entry dialog.
+ *
+ * <p>Prompts the user to enter their master password to unlock encrypted storage containing
+ * cluster credentials. Provides options to change or reset the master password. Validates
+ * the entered password and loads encrypted data upon successful authentication.
+ */
 public class EnterMasterPasswordController extends AbstractController {
 
     public PasswordField passwordFieldCurrentMasterPassword;

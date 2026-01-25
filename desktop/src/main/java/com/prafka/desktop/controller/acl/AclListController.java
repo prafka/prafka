@@ -30,6 +30,13 @@ import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 import static com.prafka.desktop.util.JavaFXUtils.getStage;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+/**
+ * Controller for the ACL list view displaying all cluster ACLs.
+ *
+ * <p>Shows a comprehensive table of ACLs including principal, resource, permission,
+ * operation, and host. Provides filtering, summary cards, and actions to create or
+ * delete ACLs. Main entry point for ACL management in the cluster.
+ */
 public class AclListController extends AbstractTableController<List<Acl>, String, AclListController.AclModelView> {
 
     public Button buttonCreateAcl;

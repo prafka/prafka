@@ -18,6 +18,13 @@ import org.controlsfx.control.SegmentedButton;
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 import static com.prafka.desktop.util.JavaFXUtils.getStage;
 
+/**
+ * Controller for creating custom ACLs with full control over permissions.
+ *
+ * <p>Provides fine-grained ACL configuration allowing selection of resource type,
+ * pattern (exact or prefixed), operation, and permission type (allow or deny).
+ * Used for advanced ACL scenarios not covered by consumer or producer presets.
+ */
 public class CreateAclForCustomNeedController extends AbstractController {
 
     public Pane paneContent;

@@ -17,6 +17,13 @@ import org.apache.commons.lang3.StringUtils;
 import static com.prafka.core.util.StreamUtils.tryOrEmpty;
 import static com.prafka.desktop.concurrent.FutureServiceAdapter.futureTask;
 
+/**
+ * Controller for creating new Kafka quotas.
+ *
+ * <p>Provides a form to configure quota entity (user, client ID, or IP), entity name,
+ * quota type (producer/consumer rate, connection rate, etc.), and quota value.
+ * Validates input and creates the quota configuration in the cluster.
+ */
 public class CreateQuotaController extends AbstractController {
 
     public Pane paneContent;

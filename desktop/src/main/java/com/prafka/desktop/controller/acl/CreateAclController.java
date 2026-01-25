@@ -10,6 +10,13 @@ import javafx.scene.layout.Pane;
 
 import static org.apache.commons.lang3.BooleanUtils.isTrue;
 
+/**
+ * Controller for the create ACL dialog with mode selection.
+ *
+ * <p>Provides a wizard-style interface to create Kafka ACLs with three modes:
+ * consumer ACLs (read access), producer ACLs (write access), or custom ACLs
+ * (fine-grained permission control). Routes to the appropriate sub-controller.
+ */
 public class CreateAclController extends AbstractController {
 
     public RadioButton radioButtonForConsumer;
