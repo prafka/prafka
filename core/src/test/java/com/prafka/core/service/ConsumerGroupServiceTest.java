@@ -333,4 +333,131 @@ class ConsumerGroupServiceTest {
         assertEquals(1, result.emptyCount());
         assertEquals(1, result.deadCount());
     }
+
+    @Test
+    void shouldDeleteConsumerGroup() throws Exception {
+        // Given
+        var clusterId = "test-cluster";
+        var groupId = "group-to-delete";
+
+        var mockDeleteConsumerGroupsResult = mock(DeleteConsumerGroupsResult.class);
+        when(mockDeleteConsumerGroupsResult.all()).thenReturn(KafkaFuture.completedFuture(null));
+        when(adminClient.deleteConsumerGroups(anyList())).thenReturn(mockDeleteConsumerGroupsResult);
+
+        // When
+        consumerGroupService.delete(clusterId, groupId).get();
+
+        // Then
+        verify(adminClient).deleteConsumerGroups(List.of(groupId));
+    }
+
+    @Test
+    void shouldUpdateOffsets() throws Exception {
+        // Given
+        var clusterId = "test-cluster";
+        var groupId = "test-group";
+        var tp = new TopicPartition("topic1", 0);
+        var offsets = Map.of(tp, 150L);
+
+        // When
+        consumerGroupService.updateOffsets(clusterId, groupId, offsets).get();
+
+        // Then
+        verify(consumer).commitSync(anyMap());
+    }
+
+    @Test
+    void shouldGetAllGroupIds() throws Exception {
+        // Given
+        var clusterId = "test-cluster";
+
+        var mockListConsumerGroupsResult = mock(ListConsumerGroupsResult.class);
+        var groupListings = List.of(
+                new ConsumerGroupListing("group1", Optional.of(GroupState.STABLE), Optional.of(GroupType.CONSUMER), true),
+                new ConsumerGroupListing("group2", Optional.of(GroupState.EMPTY), Optional.of(GroupType.CONSUMER), true)
+        );
+
+        when(mockListConsumerGroupsResult.all()).thenReturn(KafkaFuture.completedFuture(groupListings));
+        when(adminClient.listConsumerGroups()).thenReturn(mockListConsumerGroupsResult);
+
+        // When
+        var result = consumerGroupService.getAllGroupIds(clusterId).get();
+
+        // Then
+        assertEquals(2, result.size());
+        assertTrue(result.contains("group1"));
+        assertTrue(result.contains("group2"));
+    }
+
+    @Test
+    void shouldGetAllGroupIdsWithState() throws Exception {
+        // Given
+        var clusterId = "test-cluster";
+
+        var mockListConsumerGroupsResult = mock(ListConsumerGroupsResult.class);
+        var groupListings = List.of(
+                new ConsumerGroupListing("group1", Optional.of(GroupState.STABLE), Optional.of(GroupType.CONSUMER), true),
+                new ConsumerGroupListing("group2", Optional.of(GroupState.EMPTY), Optional.of(GroupType.CONSUMER), true)
+        );
+
+        when(mockListConsumerGroupsResult.all()).thenReturn(KafkaFuture.completedFuture(groupListings));
+        when(adminClient.listConsumerGroups()).thenReturn(mockListConsumerGroupsResult);
+
+        // When
+        var result = consumerGroupService.getAllGroupIdsWithState(clusterId).get();
+
+        // Then
+        assertEquals(2, result.size());
+        assertEquals("group1", result.get(0).groupId());
+        assertEquals(GroupState.STABLE, result.get(0).state());
+        assertEquals("group2", result.get(1).groupId());
+        assertEquals(GroupState.EMPTY, result.get(1).state());
+    }
+
+    @Test
+    void shouldCreateWithLatestStrategy() throws Exception {
+        // Given
+        var clusterId = "test-cluster";
+        var groupId = "test-group";
+        var strategy = ConsumerGroup.OffsetStrategy.LATEST;
+        var topics = List.of("topic1");
+
+        var partition1 = new TopicPartition("topic1", 0);
+        var topicPartitions = List.of(partition1);
+
+        when(consumer.partitionsFor("topic1")).thenReturn(List.of(new PartitionInfo("topic1", 0, null, null, null)));
+        when(consumer.endOffsets(topicPartitions)).thenReturn(Map.of(partition1, 100L));
+
+        // When
+        consumerGroupService.create(clusterId, groupId, strategy, topics).get();
+
+        // Then
+        verify(consumer).assign(topicPartitions);
+        verify(consumer).commitSync(anyMap());
+    }
+
+    @Test
+    void shouldCalculateNewOffsetsForNegativeShift() throws Exception {
+        // Given
+        var clusterId = "test-cluster";
+        var groupId = "test-group";
+
+        var topicPartition = new TopicPartition("topic1", 0);
+        var offset = new ConsumerGroup.Offset(100L, 50L, 200L);
+        var offsets = Map.of(topicPartition, offset);
+
+        var filter = new ConsumerGroupService.CalculateNewOffsetsFilter(
+                ConsumerGroup.OffsetStrategy.SHIFT,
+                Optional.empty(),
+                Optional.of(-30),
+                Optional.empty()
+        );
+
+        // When
+        var result = consumerGroupService.calculateNewOffsets(clusterId, groupId, offsets, filter).get();
+
+        // Then
+        assertEquals(1, result.size());
+        assertEquals(70L, result.get(topicPartition));
+    }
 }
