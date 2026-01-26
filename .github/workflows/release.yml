@@ -20,6 +20,9 @@ jobs:
         with:
           name: release-macos
           path: desktop/target/distribution
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: desktop/target/distribution/*
 
   release-ubuntu:
     runs-on: ubuntu-latest
@@ -37,6 +40,9 @@ jobs:
         with:
           name: release-ubuntu
           path: desktop/target/distribution
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: desktop/target/distribution/*
 
   release-fedora:
     runs-on: ubuntu-latest
@@ -55,6 +61,9 @@ jobs:
         with:
           name: release-fedora
           path: desktop/target/distribution
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: desktop/target/distribution/*
 
   release-windows:
     runs-on: windows-latest
@@ -71,3 +80,6 @@ jobs:
         with:
           name: release-windows
           path: desktop/target/distribution
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: desktop/target/distribution/*
