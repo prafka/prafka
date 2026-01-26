@@ -80,3 +80,10 @@ mv target/distribution/opt/prafka target/distribution/opt/prafka-"$PROJECT_VERSI
 tar -czf target/distribution/prafka-"$PROJECT_VERSION"-x86_64.tar.gz -C target/distribution/opt .
 rm -rf target/distribution/opt
 rm -rf target/distribution/usr
+
+echo "checksums"
+for file in target/distribution/*.rpm target/distribution/*.deb target/distribution/*.AppImage target/distribution/*.tar.gz; do
+  if [ -f "$file" ]; then
+    sha256sum "$file" | sed "s/target\/distribution\///g" > "$file.sha256"
+  fi
+done

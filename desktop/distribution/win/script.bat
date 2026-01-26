@@ -37,6 +37,11 @@ echo portable
 "distribution\win\soft\7za.exe" a -tzip "target\distribution\prafka-%PROJECT_VERSION%.zip" ".\target\distribution\SourceDir\Prafka\*"
 rmdir /s /q target\distribution\SourceDir
 
+echo checksums
+for %%f in (target\distribution\*.exe target\distribution\*.msi target\distribution\*.zip) do (
+    powershell -Command "Get-FileHash -Path '%%f' -Algorithm SHA256 | Select-Object -ExpandProperty Hash | Out-File -FilePath '%%f.sha256' -Encoding ASCII"
+)
+
 exit \b %ERRORLEVEL%
 
 :jpackage

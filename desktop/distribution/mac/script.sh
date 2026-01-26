@@ -64,3 +64,10 @@ tar -czf target/distribution/prafka-"$PROJECT_VERSION".tar.gz -C target/distribu
 rm -rf target/distribution/"$PROJECT_NAME"
 rm -rf target/distribution/prafka-temp
 rm -f target/distribution/Prafka:com.apple.provenance
+
+echo "checksums"
+for file in target/distribution/*.dmg target/distribution/*.pkg target/distribution/*.tar.gz; do
+  if [ -f "$file" ]; then
+    shasum -a 256 "$file" | sed "s/target\/distribution\///g" > "$file.sha256"
+  fi
+done
