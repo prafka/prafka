@@ -33,6 +33,10 @@ public class AnalyticsService {
     public AnalyticsService(StorageService storageService, BackendClient backendClient) {
         this.storageService = storageService;
         this.backendClient = backendClient;
+        startScheduler();
+    }
+
+    protected void startScheduler() {
         ScheduledServiceAdapter.scheduleTask(this::sendAnalytics).start(Duration.seconds(10), Duration.seconds(10));
     }
 
