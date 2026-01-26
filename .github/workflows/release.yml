@@ -18,13 +18,13 @@ jobs:
           java-package: 'jdk+fx'
           cache: maven
       - run: mvn -pl core,desktop clean package
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: desktop/target/distribution/*
       - uses: actions/upload-artifact@v4
         with:
           name: release-macos
           path: desktop/target/distribution
-      - uses: softprops/action-gh-release@v2
-        with:
-          files: desktop/target/distribution/*
 
   release-ubuntu:
     runs-on: ubuntu-latest
@@ -40,13 +40,13 @@ jobs:
           cache: maven
       - run: sudo apt install desktop-file-utils
       - run: mvn -pl core,desktop clean package
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: desktop/target/distribution/*
       - uses: actions/upload-artifact@v4
         with:
           name: release-ubuntu
           path: desktop/target/distribution
-      - uses: softprops/action-gh-release@v2
-        with:
-          files: desktop/target/distribution/*
 
   release-fedora:
     runs-on: ubuntu-latest
@@ -63,13 +63,14 @@ jobs:
           cache: maven
       - run: sudo dnf install -y maven rpm-build
       - run: mvn -pl core,desktop clean package
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: desktop/target/distribution/*
+          overwrite_files: false
       - uses: actions/upload-artifact@v4
         with:
           name: release-fedora
           path: desktop/target/distribution
-      - uses: softprops/action-gh-release@v2
-        with:
-          files: desktop/target/distribution/*
 
   release-windows:
     runs-on: windows-latest
@@ -84,10 +85,10 @@ jobs:
           java-package: 'jdk+fx'
           cache: maven
       - run: mvn -pl core,desktop clean package
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: desktop/target/distribution/*
       - uses: actions/upload-artifact@v4
         with:
           name: release-windows
           path: desktop/target/distribution
-      - uses: softprops/action-gh-release@v2
-        with:
-          files: desktop/target/distribution/*
