@@ -7,6 +7,10 @@
             <pattern>main</pattern>
             <version>${describe.tag.version}</version>
         </ref>
+        <ref type="tag">
+            <pattern><![CDATA[(?<version>.*)]]></pattern>
+            <version>${ref.version}</version>
+        </ref>
     </refs>
 
 </configuration>
