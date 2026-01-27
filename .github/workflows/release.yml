@@ -20,7 +20,13 @@ jobs:
       - run: mvn -pl core,desktop clean package
       - uses: softprops/action-gh-release@v2
         with:
-          files: desktop/target/distribution/*
+          files: |
+            desktop/target/distribution/*.dmg
+            desktop/target/distribution/*.dmg.sha256
+            desktop/target/distribution/*.pkg
+            desktop/target/distribution/*.pkg.sha256
+            desktop/target/distribution/*.tar.gz
+            desktop/target/distribution/*.tar.gz.sha256
 
   release-ubuntu:
     runs-on: ubuntu-latest
@@ -38,7 +44,13 @@ jobs:
       - run: mvn -pl core,desktop clean package
       - uses: softprops/action-gh-release@v2
         with:
-          files: desktop/target/distribution/*
+          files: |
+            desktop/target/distribution/*.deb
+            desktop/target/distribution/*.deb.sha256
+            desktop/target/distribution/*.AppImage
+            desktop/target/distribution/*.AppImage.sha256
+            desktop/target/distribution/*.tar.gz
+            desktop/target/distribution/*.tar.gz.sha256
 
   release-fedora:
     runs-on: ubuntu-latest
@@ -77,4 +89,10 @@ jobs:
       - run: mvn -pl core,desktop clean package
       - uses: softprops/action-gh-release@v2
         with:
-          files: desktop/target/distribution/*
+          files: |
+            desktop/target/distribution/*.exe
+            desktop/target/distribution/*.exe.sha256
+            desktop/target/distribution/*.msi
+            desktop/target/distribution/*.msi.sha256
+            desktop/target/distribution/*.zip
+            desktop/target/distribution/*.zip.sha256
