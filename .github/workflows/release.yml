@@ -48,8 +48,6 @@ jobs:
     steps:
       - run: sudo dnf install -y git
       - uses: actions/checkout@v6
-        with:
-          set-safe-directory: ${{github.workspace}}
       - uses: actions/setup-java@v5
         with:
           distribution: 'liberica'
