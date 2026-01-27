@@ -42,7 +42,7 @@ for %%f in (target\distribution\*.exe target\distribution\*.msi target\distribut
     certutil -hashfile "%%f" SHA256 | findstr /v "SHA256 hash of" | findstr /v "CertUtil" > "%%f.sha256.tmp"
     for /f "delims=" %%h in (%%f.sha256.tmp) do (
         for %%a in (%%f) do (
-            echo "%%h  %%~nxa" > "%%f.sha256"
+            echo %%h  %%~nxa> "%%f.sha256"
         )
     )
     del "%%f.sha256.tmp"
